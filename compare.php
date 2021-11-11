@@ -1,5 +1,5 @@
 <?php
-    require('header.php');
+    include('header.php');
 ?>
 
 
@@ -35,17 +35,17 @@
                                         <tr>
                                             <td class="first-column">Product</td>
                                             <td class="product-image-title">
-                                                <a href="#" class="image"><img src="assets/images/product/product-1.jpg" alt="Compare Product"></a>
+                                                <a href="#" class="image"><img src="./assets/images/product/product-1.jpg" alt="Compare Product"></a>
                                                 <a href="#" class="category">Laptop</a>
                                                 <a href="#" class="title">Zeon Zen 4 Pro</a>
                                             </td>
                                             <td class="product-image-title">
-                                                <a href="#" class="image"><img src="assets/images/product/product-2.jpg" alt="Compare Product"></a>
+                                                <a href="#" class="image"><img src="./assets/images/product/product-2.jpg" alt="Compare Product"></a>
                                                 <a href="#" class="category">Doren</a>
                                                 <a href="#" class="title">Aquet Doren D 420</a>
                                             </td>
                                             <td class="product-image-title">
-                                                <a href="#" class="image"><img src="assets/images/product/product-4.jpg" alt="Compare Product"></a>
+                                                <a href="#" class="image"><img src="./assets/images/product/product-4.jpg" alt="Compare Product"></a>
                                                 <a href="#" class="category">Games</a>
                                                 <a href="#" class="title">Game Station X 22</a>
                                             </td>
@@ -127,7 +127,7 @@
         </div>
         <!-- Compare Page End -->
         <?php
-    require('footer.php');
+    include('footer.php');
 ?>
     </div>
 
@@ -135,7 +135,7 @@
 
     <!-- All jquery file included here -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="https://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.22&amp;key=AIzaSyDAq7MrCR1A2qIShmjbtLHSKjcEIEBEEwM"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyDAq7MrCR1A2qIShmjbtLHSKjcEIEBEEwM"></script>
     <script src="assets/js/vendor/popper.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/plugins/plugins.js"></script>
@@ -143,6 +143,4 @@
 
 </body>
 
-
-<!-- Mirrored from demo.hasthemes.com/nelson-preview/nelson/compare.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Oct 2021 05:06:02 GMT -->
 </html>

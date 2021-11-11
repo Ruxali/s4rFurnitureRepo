@@ -18,6 +18,7 @@ windows.on('scroll', function() {
         sticky.addClass('is-sticky');
     }
 });
+
     
 /*--
     Header Search 
@@ -110,23 +111,7 @@ $('select').niceSelect();
 /*--
     Sliders
 -----------------------------------*/
-// Hero Slider
-$('.hero-slider').slick({
-    infinite: true,
-    fade: true,
-    dots: false,
-    prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
-    nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
-    responsive: [
-        {
-        breakpoint: 992,
-            settings: {
-                dots: true,
-                arrows: false,
-            }
-        },
-    ]
-});
+
 // Testimonial Slider
 $('.testimonial-slider-content').slick({
     infinite: true,

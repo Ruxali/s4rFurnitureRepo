@@ -1,6 +1,6 @@
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index2.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -216,13 +216,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../assets/images/author/author-1.png" class="user-image" alt="User Image">
+              <img src="dist/img/user4-128x128.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">Ruxali Maharjan</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="../assets/images/author/author-1.png" class="img-circle" alt="User Image">
+                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Ruxali Maharjan - Web Developer

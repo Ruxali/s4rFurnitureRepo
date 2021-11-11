@@ -4,7 +4,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../assets/images/author/author-1.png"" class="img-circle" alt="User Image">
+          <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Ruxali Maharjan</p>
@@ -24,24 +24,25 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
+        
         <li>
           <a href="adminindex.php">
-            <i class="fa fa-th"></i> <span>HOME</span>
+            <i class="fa fa-th"></i> <span>Home</span>
           </a>
         </li>
         <li>
           <a href="categories.php">
-            <i class="fa fa-th"></i> <span>CATEGORIES</span>
+            <i class="fa fa-th"></i> <span>Categories</span>
           </a>
         </li>
         <li>
           <a href="productsshow.php">
-            <i class="fa fa-th"></i> <span>PRODUCTS</span>
+            <i class="fa fa-th"></i> <span>Products</span>
           </a>
         </li>
         <li>
           <a href="adminfiles/logout.php">
-            <i class="fa fa-th"></i> <span>SIGN OUT</span>
+            <i class="fa fa-th"></i> <span>Sign Out</span>
           </a>
         </li>
       </ul>

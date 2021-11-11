@@ -1,5 +1,5 @@
 <?php
-    require('header.php');
+    include('header.php');
 ?>
 
 
@@ -34,32 +34,32 @@
                                     <div class="product-details-left">
                                         <div class="product-details-images">
                                             <div class="lg-image">
-                                                <img src="assets/images/product/large-product/l-product-1.jpg" alt="">
-                                                <a href="assets/images/product/large-product/l-product-1.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                                                <img src="./assets/images/product/large-product/l-product-1.jpg" alt="">
+                                                <a href="./assets/images/product/large-product/l-product-1.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                             </div>
                                             <div class="lg-image">
-                                                <img src="assets/images/product/large-product/l-product-2.jpg" alt="">
-                                                <a href="assets/images/product/large-product/l-product-2.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                                                <img src="./assets/images/product/large-product/l-product-2.jpg" alt="">
+                                                <a href="./assets/images/product/large-product/l-product-2.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                             </div>
                                             <div class="lg-image">
-                                                <img src="assets/images/product/large-product/l-product-3.jpg" alt="">
-                                                <a href="assets/images/product/large-product/l-product-3.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                                                <img src="./assets/images/product/large-product/l-product-3.jpg" alt="">
+                                                <a href="./assets/images/product/large-product/l-product-3.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                             </div>
                                             <div class="lg-image">
-                                                <img src="assets/images/product/large-product/l-product-4.jpg" alt="">
-                                                <a href="assets/images/product/large-product/l-product-4.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                                                <img src="./assets/images/product/large-product/l-product-4.jpg" alt="">
+                                                <a href="./assets/images/product/large-product/l-product-4.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                             </div>
                                             <div class="lg-image">
-                                                <img src="assets/images/product/large-product/l-product-5.jpg" alt="">
-                                                <a href="assets/images/product/large-product/l-product-5.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
+                                                <img src="./assets/images/product/large-product/l-product-5.jpg" alt="">
+                                                <a href="./assets/images/product/large-product/l-product-5.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                             </div>
                                         </div>
                                         <div class="product-details-thumbs">
-                                            <div class="sm-image"><img src="assets/images/product/small-product/s-product-1.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="assets/images/product/small-product/s-product-2.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="assets/images/product/small-product/s-product-3.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="assets/images/product/small-product/s-product-4.jpg" alt="product image thumb"></div>
-                                            <div class="sm-image"><img src="assets/images/product/small-product/s-product-5.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-1.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-2.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-3.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-4.jpg" alt="product image thumb"></div>
+                                            <div class="sm-image"><img src="./assets/images/product/small-product/s-product-5.jpg" alt="product image thumb"></div>
                                         </div>
                                     </div>
                                     <!--Product Details Left -->
@@ -163,7 +163,7 @@
                                         <ul>
                                             <li>
                                                 <div class="product-comment">
-                                                    <img src="assets/images/icons/author.png" alt="">
+                                                    <img src="./assets/images/icons/author.png" alt="">
                                                     <div class="product-comment-content">
                                                         <div class="product-reviews">
                                                             <i class="fa fa-star"></i>
@@ -251,8 +251,8 @@
                                     <span>-20%</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-1.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-2.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-1.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -279,8 +279,8 @@
                                     <span>-20%</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-2.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-3.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-3.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -308,8 +308,8 @@
                                     <span>-20%</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-4.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-1.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-4.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-1.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -333,7 +333,7 @@
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-3.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-3.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -360,8 +360,8 @@
                                     <span class="sale">Sale</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-5.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-2.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-5.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -388,8 +388,8 @@
                                     <span class="sale">New</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-6.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-4.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-6.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-4.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -416,7 +416,7 @@
                                     <span>-20%</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-7.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-7.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -443,8 +443,8 @@
                                     <span>-29%</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-8.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-2.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-8.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -468,8 +468,8 @@
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-9.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-10.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-9.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-10.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -496,8 +496,8 @@
                                     <span class="sale">Sale</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-11.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-12.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-11.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-12.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -521,8 +521,8 @@
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-10.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-13.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-10.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-13.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -546,7 +546,7 @@
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-14.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-14.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -573,8 +573,8 @@
                                     <span class="sale">New</span>
                                 </div>
                                 <a href="single-product.php">
-                                    <img src="assets/images/product/product-14.jpg" class="img-fluid" alt="">
-                                    <img src="assets/images/product/product-13.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-14.jpg" class="img-fluid" alt="">
+                                    <img src="./assets/images/product/product-13.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
@@ -598,7 +598,7 @@
         </div>
         <!--Product section end-->
         <?php
-    require('footer.php');
+    include('footer.php');
 ?>
     </div>
 
@@ -606,7 +606,7 @@
 
     <!-- All jquery file included here -->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="https://maps.google.com/maps/api/js?sensor=false&amp;libraries=geometry&amp;v=3.22&amp;key=AIzaSyDAq7MrCR1A2qIShmjbtLHSKjcEIEBEEwM"></script>
+    <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyDAq7MrCR1A2qIShmjbtLHSKjcEIEBEEwM"></script>
     <script src="assets/js/vendor/popper.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
     <script src="assets/js/plugins/plugins.js"></script>
@@ -614,6 +614,4 @@
 
 </body>
 
-
-<!-- Mirrored from demo.hasthemes.com/nelson-preview/nelson/single-product.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Oct 2021 05:06:03 GMT -->
 </html>

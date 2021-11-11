@@ -1,15 +1,15 @@
-<?php
-	include("connect.php");
-	?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>S4R Furniture</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/images/logo" type="img/x-icon" rel="shortcut icon">
+    <!-- Place favicon.ico in the root directory -->
+    
+    <!-- All css files are included here. -->
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/vendor/iconfont.min.css">
     <link rel="stylesheet" href="assets/css/vendor/helper.css">
@@ -31,7 +31,7 @@
                         <div class="col-xl-3 col-lg-2 col-md-4 col-12">
                             <!--Logo Area Start-->
                             <div class="logo-area">
-                                <a href="index.php"><img src="assets/images/and.png" alt=""></a>
+                                <a href="index.php"><img src="assets/images/mainlogo.png" height="120"></a>
                             </div>
                             <!--Logo Area End-->
                         </div>
@@ -41,32 +41,56 @@
                                 <nav class="main-menu">
                                     <ul>
                                         <li><a href="index.php">Home</a>
+                                            
                                         </li>
-                                        <li><a href="shop.php">Shop</a>
-                                        </li>       
-                                        <li><a href="#">Pages</a>
+                                        <li><a href="blog.php">Pages</a>
+                                        
                                             <ul class="sub-menu">
-                                                        <li><a href="about.php">About</a></li>
+                                            <li><a href="about.php">About</a></li>
                                                         <li><a href="compare.php">Compare</a></li>
                                                         <li><a href="cart.php">Shopping Cart</a></li>
                                                         <li><a href="checkout.php">Checkout</a></li>
                                                         <li><a href="wishlist.php">Wishlist</a></li>
                                                         <li><a href="my-account.php">My Account</a></li>
                                                         <li><a href="login-register.php">Login Register</a></li>
+                                                        <li><a href="faq.php">Frequently Questions</a></li>
+                                                        
                                             </ul>
                                         </li>
-                                        <li><a href="#">Categories</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog.php">Bed</a></li>
-                                                <li><a href="blog-two-column.php">Chair</a></li>
-                                                <li><a href="blog-left-sidebar.php">Couch</a></li>
-                                                <li><a href="blog-right-sidebar.php">Cupboard</a></li>
-                                                <li><a href="blog-details.php">Decor</a></li>
-                                                <li><a href="blog-details-gallery.php">Kitchen & Dining</a></li>
-                                                <li><a href="blog-details-audio.php">Rack & Shelves</a></li>
-                                                <li><a href="blog-details-video.php">Tables</a></li>
+                                        <li><a href="shop.php">Shop</a>
+                                            <ul class="mega-menu four-column left-0">
+                                                
+                                                <li><a href="#" class="item-link">Shop Layout</a>
+                                                    <ul>
+                                                        <li><a href="shop.php">Shop</a></li>
+                                                        <li><a href="shop-three-column.php">Shop Three Column</a></li>
+                                                        <li><a href="shop-four-column.php">Shop Four Column</a></li>
+                                                        <li><a href="shop-right-sidebar.php">Shop Right Sidebar</a></li>
+                                                        <li><a href="shop-list-nosidebar.php">Shop List No Sidebar</a></li>
+                                                        <li><a href="shop-list-left-sidebar.php">Shop List Left Sidebar</a>
+                                                        </li>
+                                                        <li><a href="shop-list-right-sidebar.php">Shop List Right
+                                                                Sidebar</a></li>
+                                                    </ul>
+                                                </li>
+                                                
                                             </ul>
                                         </li>
+
+                                        <li><a href="shop.php">Categories</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="about.php">Bed</a></li>
+                                                        <li><a href="compare.php">Chair</a></li>
+                                                        <li><a href="cart.php">Couch</a></li>
+                                                        <li><a href="checkout.php">Cupboard</a></li>
+                                                        <li><a href="wishlist.php">Decor</a></li>
+                                                        <li><a href="my-account.php">Kitchen & Dining</a></li>
+                                                        <li><a href="login-register.php">Rack & Shelves</a></li>
+                                                        <li><a href="faq.php">Tables</a></li>
+                                                        
+                                            </ul>
+                                    </li>
+                                        
                                         <li><a href="contact.php">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -81,7 +105,6 @@
                                     <li class="currency-menu"><a href="#"><i class="flaticon-user"></i></a>
                                         <!--Crunccy dropdown-->
                                         <ul class="currency-dropdown">
-                                            <!--Language Currency Start-->
                                             
                                             <!--Account Currency Start-->
                                             <li><a href="my-account.php">My account</a>
@@ -103,7 +126,7 @@
                                             <ul class="cart-items">
                                                 <li class="single-cart-item">
                                                     <div class="cart-img">
-                                                        <a href="cart.php"><img src="assets/images/cart/cart1.jpg" alt=""></a>
+                                                        <a href="cart.php"><img src="./assets/images/cart/cart1.jpg" alt=""></a>
                                                     </div>
                                                     <div class="cart-content">
                                                         <h5 class="product-name"><a href="single-product.php">Dell Inspiron 24</a></h5>
@@ -116,7 +139,7 @@
                                                 </li>
                                                 <li class="single-cart-item">
                                                     <div class="cart-img">
-                                                        <a href="cart.php"><img src="assets/images/cart/cart2.jpg" alt=""></a>
+                                                        <a href="cart.php"><img src="./assets/images/cart/cart2.jpg" alt=""></a>
                                                     </div>
                                                     <div class="cart-content">
                                                         <h5 class="product-name"><a href="single-product.php">Lenovo Ideacentre 300</a></h5>
@@ -162,7 +185,7 @@
                                     <div class="col-6 col-md-6">
                                         <div class="header-logo">
                                             <a href="index.php">
-                                                <img src="assets/images/logo.png" class="img-fluid" alt="">
+                                                <img src="./assets/images/logo.png" class="img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -217,12 +240,16 @@
                     </div>
                     <nav class="offcanvas-navigation">
                         <ul>
-                            <li class="menu-item-has-children"><a href="home.php">Home</a>
+                            <li class="menu-item-has-children"><a href="#">Home</a>
+                                <ul class="submenu2">
+                                    <li><a href="index.php">Home 01</a></li>
+                                    <li><a href="index-2.php">Home 02</a></li>
+                                </ul>
                             </li>
-                            <li class="menu-item-has-children"><a href="shop.php">Shop</a>
-                            </li>       
-                            <li class="menu-item-has-children"><a href="#">Pages</a>
-                                 <ul class="submenu2">
+                            <li class="menu-item-has-children"><a href="#">Shop</a>
+                                <ul class="submenu2">
+                                    <li class="menu-item-has-children"><a href="#">Pages</a>
+                                        <ul class="submenu2">
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="compare.php">Compare</a></li>
                                             <li><a href="cart.php">Shopping Cart</a></li>
@@ -232,20 +259,63 @@
                                             <li><a href="login-register.php">Login Register</a></li>
                                             <li><a href="faq.php">Frequently Questions</a></li>
                                             <li><a href="404.php">Error 404</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="#">Shop Layout</a>
+                                        <ul class="submenu2">
+                                            <li><a href="shop.php">Shop</a></li>
+                                            <li><a href="shop-three-column.php">Shop Three Column</a></li>
+                                            <li><a href="shop-four-column.php">Shop Four Column</a></li>
+                                            <li><a href="shop-right-sidebar.php">Shop Right Sidebar</a></li>
+                                            <li><a href="shop-list-nosidebar.php">Shop List No Sidebar</a></li>
+                                            <li><a href="shop-list-left-sidebar.php">Shop List Left Sidebar</a>
+                                            </li>
+                                            <li><a href="shop-list-right-sidebar.php">Shop List Right
+                                                    Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="#">Product Details</a>
+                                        <ul class="submenu2">
+                                            <li><a href="single-product.php">Single Product</a></li>
+                                            <li><a href="single-product-variable.php">Variable Product</a></li>
+                                            <li><a href="single-product-affiliate.php">Affiliate Product</a>
+                                            </li>
+                                            <li><a href="single-product-group.php">Group Product</a></li>
+                                            <li><a href="single-product-tabstyle-2.php">Product Left Tab</a>
+                                            </li>
+                                            <li><a href="single-product-tabstyle-3.php">Product Right Tab</a>
+                                            </li>
+                                            <li><a href="single-product-gallery-left.php">Product Gallery
+                                                    Left</a></li>
+                                            <li><a href="single-product-gallery-right.php">Product Gallery
+                                                    Right</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children"><a href="#">Product Details</a>
+                                        <ul class="submenu2">
+                                            <li><a href="single-product-sticky-left.php">Product Sticky
+                                                    Left</a></li>
+                                            <li><a href="single-product-sticky-right.php">Product Sticky
+                                                    Right</a></li>
+                                            <li><a href="single-product-slider-box.php">Product Box Slider</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children"><a href="#">Categories</a>
-                                            <ul class="submenu2">
-                                                <li><a href="blog.php">Bed</a></li>
-                                                <li><a href="blog-two-column.php">Chair</a></li>
-                                                <li><a href="blog-left-sidebar.php">Couch</a></li>
-                                                <li><a href="blog-right-sidebar.php">Cupboard</a></li>
-                                                <li><a href="blog-details.php">Decor</a></li>
-                                                <li><a href="blog-details-gallery.php">Kitchen & Dining</a></li>
-                                                <li><a href="blog-details-audio.php">Rack & Shelves</a></li>
-                                                <li><a href="blog-details-video.php">Tables</a></li>
-                                            </ul>
-                                        
+                            <li><a href="shop.php">New Arrivals</a></li>
+                            <li class="menu-item-has-children"><a href="#">Pages</a>
+                                <ul class="submenu2">
+                                    <li><a href="blog.php">Blog</a></li>
+                                    <li><a href="blog-two-column.php">Blog Two Column</a></li>
+                                    <li><a href="blog-left-sidebar.php">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-right-sidebar.php">Blog Right Sidebar</a></li>
+                                    <li><a href="blog-details.php">Blog Details</a></li>
+                                    <li><a href="blog-details-gallery.php">Blog Details Gallery</a></li>
+                                    <li><a href="blog-details-audio.php">Blog Details Audio</a></li>
+                                    <li><a href="blog-details-video.php">Blog Details Video</a></li>
+                                </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="contact.php">Contact</a>
                             </li>
@@ -265,7 +335,18 @@
                                         <li><a href="wishlist.php">Wishlist</a></li>
                                     </ul>
                                 </li>
-                                
+                                <li class="menu-item-has-children"><a href="#">CURRENCY: USD </a>
+                                    <ul class="submenu2">
+                                        <li><a href="javascript:void(0)">€ Euro</a></li>
+                                        <li><a href="javascript:void(0)">$ US Dollar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="#">LANGUAGE: EN-GB </a>
+                                    <ul class="submenu2">
+                                        <li><a href="javascript:void(0)"><img src="./assets/images/icons/en-gb.png" alt=""> English</a></li>
+                                        <li><a href="javascript:void(0)"><img src="./assets/images/icons/de-de.png" alt=""> Germany</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -312,4 +393,4 @@
                 <p class="form-description">Hit enter to search or ESC to close</p>
             </div>
         </div>
-        <!-- main-search start -->
+        <!-- main-search end -->

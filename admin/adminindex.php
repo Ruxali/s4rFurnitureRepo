@@ -26,7 +26,7 @@
         <section class="content">
           <div class="row">
             <div class="col-sm-9">
-            <a href="products.php">
+            <a href="addProducts.php">
                 <button style="color: green;">Add Products</button>
                 </a>
                 <hr>
