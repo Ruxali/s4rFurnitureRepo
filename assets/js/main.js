@@ -18,7 +18,6 @@ windows.on('scroll', function() {
         sticky.addClass('is-sticky');
     }
 });
-
     
 /*--
     Header Search 
@@ -111,7 +110,23 @@ $('select').niceSelect();
 /*--
     Sliders
 -----------------------------------*/
-
+// Hero Slider
+$('.hero-slider').slick({
+    infinite: true,
+    fade: true,
+    dots: false,
+    prevArrow: '<button class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+    nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
+    responsive: [
+        {
+        breakpoint: 992,
+            settings: {
+                dots: true,
+                arrows: false,
+            }
+        },
+    ]
+});
 // Testimonial Slider
 $('.testimonial-slider-content').slick({
     infinite: true,
@@ -421,13 +436,13 @@ $('[data-countdown]').each(function () {
     var $this = $(this),
     finalDate = $(this).data('countdown');
     $this.countdown(finalDate, function (event) {
-        $this.php(event.strftime('<div class="single-countdown big-font"><span class="single-countdown-time">%D</span><span class="single-countdown-text">days,</span></div><div class="single-countdown"><span class="single-countdown-time">%H</span><span class="single-countdown-text">h</span></div><div class="single-countdown"><span class="single-countdown-time">%M</span><span class="single-countdown-text">m</span></div><div class="single-countdown"><span class="single-countdown-time">%S</span><span class="single-countdown-text">s</span></div>'));
+        $this.html(event.strftime('<div class="single-countdown big-font"><span class="single-countdown-time">%D</span><span class="single-countdown-text">days,</span></div><div class="single-countdown"><span class="single-countdown-time">%H</span><span class="single-countdown-text">h</span></div><div class="single-countdown"><span class="single-countdown-time">%M</span><span class="single-countdown-text">m</span></div><div class="single-countdown"><span class="single-countdown-time">%S</span><span class="single-countdown-text">s</span></div>'));
     });
 });
 $('[data-countdown2]').each(function() {
 	var $this = $(this), finalDate = $(this).data('countdown2');
 	$this.countdown(finalDate, function(event) {
-		$this.php(event.strftime('<div class="single-count"><span class="single-countdown-times">%D</span><span class="single-countdown-content">Days</span></div><div class="single-count"><span class="single-countdown-times">%H</span><span class="single-countdown-content">Hours</span></div><div class="single-count"><span class="single-countdown-times">%M</span><span class="single-countdown-content">Mins</span></div><div class="single-count"><span class="single-countdown-times">%S</span><span class="single-countdown-content">Secs</span></div>'));
+		$this.html(event.strftime('<div class="single-count"><span class="single-countdown-times">%D</span><span class="single-countdown-content">Days</span></div><div class="single-count"><span class="single-countdown-times">%H</span><span class="single-countdown-content">Hours</span></div><div class="single-count"><span class="single-countdown-times">%M</span><span class="single-countdown-content">Mins</span></div><div class="single-count"><span class="single-countdown-times">%S</span><span class="single-countdown-content">Secs</span></div>'));
 	});
 }); 
 
@@ -522,11 +537,11 @@ $('#mc-form').ajaxChimp({
 function mailChimpResponse(resp) {
 	
 	if (resp.result === 'success') {
-		$('.mailchimp-success').php('' + resp.msg).fadeIn(900);
+		$('.mailchimp-success').html('' + resp.msg).fadeIn(900);
 		$('.mailchimp-error').fadeOut(400);
 		
 	} else if(resp.result === 'error') {
-		$('.mailchimp-error').php('' + resp.msg).fadeIn(900);
+		$('.mailchimp-error').html('' + resp.msg).fadeIn(900);
 	}  
 }
     

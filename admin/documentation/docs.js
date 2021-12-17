@@ -6,7 +6,7 @@ $(function () {
 
   var $slideToTop = $('<div />')
 
-  $slideToTop.html('<i class="fa fa-chevron-up"></i>')
+  $slideToTop.php('<i class="fa fa-chevron-up"></i>')
 
   $slideToTop.css({
     position          : 'fixed',

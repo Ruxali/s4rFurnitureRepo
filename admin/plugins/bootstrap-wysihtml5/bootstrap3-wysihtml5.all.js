@@ -762,7 +762,7 @@ var wysihtml5 = {
         }
 
         function comparePoints(nodeA, offsetA, nodeB, offsetB) {
-            // See http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html#Level-2-Range-Comparing
+            // See http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.php#Level-2-Range-Comparing
             var nodeC, root, childA, childB, n;
             if (nodeA == nodeB) {
                 // Case 1: nodes are the same
@@ -1384,13 +1384,13 @@ var wysihtml5 = {
             // IE 6 and 7 throw
         }
 
-        api.features.htmlParsingConforms = htmlParsingConforms;
+        api.features.phpParsingConforms = htmlParsingConforms;
 
         var createContextualFragment = htmlParsingConforms ?
 
             // Implementation as per HTML parsing spec, trusting in the browser's implementation of innerHTML. See
             // discussion and base code for this implementation at issue 67.
-            // Spec: http://html5.org/specs/dom-parsing.html#extensions-to-the-range-interface
+            // Spec: http://html5.org/specs/dom-parsing.php#extensions-to-the-range-interface
             // Thanks to Aleks Williams.
             function(fragmentStr) {
                 // "Let node the context object's start's node."
@@ -2791,7 +2791,7 @@ var wysihtml5 = {
     /*----------------------------------------------------------------------------------------------------------------*/
 
     // This module creates a selection object wrapper that conforms as closely as possible to the Selection specification
-    // in the HTML Editing spec (http://dvcs.w3.org/hg/editing/raw-file/tip/editing.html#selections)
+    // in the HTML Editing spec (http://dvcs.w3.org/hg/editing/raw-file/tip/editing.php#selections)
     api.createCoreModule("WrappedSelection", ["DomRange", "WrappedRange"], function(api, module) {
         api.config.checkSelectionRanges = true;
 
@@ -5415,7 +5415,7 @@ wysihtml5.dom.getAsDom = (function() {
 
   /**
    * List of html5 tags
-   * taken from http://simon.html5.org/html5-elements
+   * taken from http://simon.php5.org/html5-elements
    */
   var HTML5_ELEMENTS = [
     "abbr", "article", "aside", "audio", "bdi", "canvas", "command", "datalist", "details", "figcaption",
@@ -10185,7 +10185,7 @@ wysihtml5.quirks.ensureProperClearing = (function() {
     }
   };
 
-  wysihtml5.selection.HTMLApplier = HTMLApplier;
+  wysihtml5.selection.phpApplier = HTMLApplier;
 
 })(wysihtml5, rangy);
 ;/**
@@ -10940,7 +10940,7 @@ wysihtml5.commands.formatCode = {
     }
 
     if (!htmlApplier[identifier]) {
-      htmlApplier[identifier] = new wysihtml5.selection.HTMLApplier(_getTagNames(tagName), className, classRegExp, true, cssStyle, styleRegExp, container);
+      htmlApplier[identifier] = new wysihtml5.selection.phpApplier(_getTagNames(tagName), className, classRegExp, true, cssStyle, styleRegExp, container);
     }
 
     return htmlApplier[identifier];
@@ -11754,7 +11754,7 @@ wysihtml5.commands.formatCode = {
 
 };;/**
  * Undo Manager for wysihtml5
- * slightly inspired by http://rniwa.com/editing/undomanager.html#the-undomanager-interface
+ * slightly inspired by http://rniwa.com/editing/undomanager.php#the-undomanager-interface
  */
 (function(wysihtml5) {
   var Z_KEY               = 90,
@@ -13638,7 +13638,7 @@ wysihtml5.views.View = Base.extend(
  * http://stackoverflow.com/questions/4361826/does-chrome-have-buil-in-speech-recognition-for-input-type-text-x-webkit-speec
  *
  * Current HTML5 draft can be found here
- * http://lists.w3.org/Archives/Public/public-xg-htmlspeech/2011Feb/att-0020/api-draft.html
+ * http://lists.w3.org/Archives/Public/public-xg-htmlspeech/2011Feb/att-0020/api-draft.php
  *
  * "Accessing Google Speech API Chrome 11"
  * http://mikepultz.com/2011/03/accessing-google-speech-api-chrome-11/
@@ -14373,7 +14373,7 @@ function program5(depth0,data) {
   stack1 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.options)),stack1 == null || stack1 === false ? stack1 : stack1.toolbar)),stack1 == null || stack1 === false ? stack1 : stack1.size), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += " btn-default\" data-wysihtml5-action=\"change_view\" title=\""
-    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.locale)),stack1 == null || stack1 === false ? stack1 : stack1.html)),stack1 == null || stack1 === false ? stack1 : stack1.edit)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.locale)),stack1 == null || stack1 === false ? stack1 : stack1.php)),stack1 == null || stack1 === false ? stack1 : stack1.edit)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" tabindex=\"-1\">\n      ";
   stack1 = helpers['if'].call(depth0, ((stack1 = ((stack1 = (depth0 && depth0.options)),stack1 == null || stack1 === false ? stack1 : stack1.toolbar)),stack1 == null || stack1 === false ? stack1 : stack1.fa), {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
@@ -14735,7 +14735,7 @@ function program17(depth0,data) {
           var target = e.delegateTarget || e.target || e.srcElement,
           el = $(target),
           showformat = el.data('wysihtml5-display-format-name'),
-          formatname = el.data('wysihtml5-format-name') || el.html();
+          formatname = el.data('wysihtml5-format-name') || el.php();
           if(showformat === undefined || showformat === 'true') {
             self.toolbar.find('.current-font').text(formatname);
           }
@@ -14744,7 +14744,7 @@ function program17(depth0,data) {
         toolbar.find('a[data-wysihtml5-command="foreColor"]').click(function(e) {
           var target = e.target || e.srcElement;
           var el = $(target);
-          self.toolbar.find('.current-color').text(el.html());
+          self.toolbar.find('.current-color').text(el.php());
         });
 
         this.el.before(toolbar);

@@ -86,7 +86,7 @@ include('adminfiles/head.php')
 
                   <td style="font-size: medium;"><?php echo $row['id'] ?></td>
                   <td style="font-size: medium;"><?php echo $row['name'] ?></td>
-                  <td style="font-size: medium;"><?php echo $row['name'] ?></td>
+                  <td style="font-size: medium;"><?php echo $row['category_id'] ?></td>
                   <td style="font-size: medium;"><?php echo $row['price'] ?></td>
                   <td style="font-size: medium;"><?php echo $row['description'] ?></td>
                   <td style="font-size: medium;">
@@ -97,7 +97,7 @@ include('adminfiles/head.php')
                     } else {
                       echo "<button style='border-radius:6px;'><a style='color:blue;' href = '?type=status&operation=active&id=" . $row['id'] . " '>Deactive</a></button>&nbsp;&nbsp;&nbsp;";
                     }
-                    echo "<button style='border-radius:6px;'><a style='color:brown;' href ='addProducts.php?id=" . $row['id'] . "'>Edit</a></button>&nbsp;&nbsp;&nbsp;";
+                    echo "<button style='border-radius:6px;'><a style='color:brown;' href ='updateProducts.php?id=" . $row['id'] . "'>Edit</a></button>&nbsp;&nbsp;&nbsp;";
 
                     echo "<button style='border-radius:6px;'><a style='color:red' href = '?type=delete&id=" . $row['id'] . "'>Delete</a></button>";
                     ?>

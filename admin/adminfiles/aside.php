@@ -27,22 +27,32 @@
         
         <li>
           <a href="adminindex.php">
-            <i class="fa fa-th"></i> <span>Home</span>
+            <i class="fa fa-th"></i> <span>HOME</span>
           </a>
         </li>
         <li>
           <a href="categories.php">
-            <i class="fa fa-th"></i> <span>Categories</span>
+            <i class="fa fa-th"></i> <span>CATEGORIES</span>
           </a>
         </li>
         <li>
           <a href="productsshow.php">
-            <i class="fa fa-th"></i> <span>Products</span>
+            <i class="fa fa-th"></i> <span>PRODUCTS</span>
+          </a>
+        </li>
+        <li>
+          <a href="users.php">
+            <i class="fa fa-th"></i> <span>USERS</span>
+          </a>
+        </li>
+        <li>
+          <a href="categories.php">
+            <i class="fa fa-th"></i> <span>ORDERS</span>
           </a>
         </li>
         <li>
           <a href="adminfiles/logout.php">
-            <i class="fa fa-th"></i> <span>Sign Out</span>
+            <i class="fa fa-th"></i> <span>SIGN OUT</span>
           </a>
         </li>
       </ul>

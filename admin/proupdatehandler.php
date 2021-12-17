@@ -1,5 +1,5 @@
 <?php
-include('../connect.php');
+include('../files/connect.php');
 if(isset($_POST['update']))
 {
 	$newid=$_POST['form_id'];
@@ -23,7 +23,7 @@ $sql="UPDATE products set name='$newname', price='$newprice', description='$newd
 if(mysqli_query($connect,$sql)) {
 	header('location: productsshow.php');
 } else {
-	header('location: adminindex.php');
+	header('location: index.php');
 }
 
 }

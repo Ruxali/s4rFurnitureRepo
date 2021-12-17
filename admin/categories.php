@@ -86,9 +86,9 @@ include('adminfiles/head.php')
                     if ($row['status'] == 1) {
                       echo "<button style='border-radius:6px;' ><a style='color:green;' href = '?type=status&operation=deactive&id=" . $row['id'] . "'>Active</a></button>&nbsp;&nbsp;&nbsp;";
                     } else {
-                      echo "<button style='border-radius:6px;'><a style='color:blue;' href = '?type=status&operation=active&id=" . $row['id'] . " '>Deactive</a></button>&nbsp;&nbsp;&nbsp;";
+                      echo "<button  style='border-radius:6px;'><a style='color:blue;' href = '?type=status&operation=active&id=" . $row['id'] . " '>Deactive</a></button>&nbsp;&nbsp;&nbsp;";
                     }
-                    echo "<button style='border-radius:6px;'><a style='color:brown;' href ='addCategories.php?id=" . $row['id'] . "'>Edit</a></button>&nbsp;&nbsp;&nbsp;";
+                    echo "<button style='border-radius:6px;'><a style='color:brown;' href ='addCategories.php?updatecat=" . $row['id'] . "'>Edit</a></button>&nbsp;&nbsp;&nbsp;";
 
                     echo "<button style='border-radius:6px;'><a style='color:red' href = '?type=delete&id=" . $row['id'] . "'>Delete</a></button>";
                     ?>

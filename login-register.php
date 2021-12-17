@@ -1,10 +1,10 @@
 <?php
-    include('header.php');
+    include('header.php'); 
 ?>
 
 
         <!-- Page Banner Section Start -->
-        <div class="page-banner-section section bg-image" data-bg="assets/images/bg/breadcrumb.png">
+        <div class="page-banner-section section bg-image" data-bg="gallery/shopBanner.png">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -33,9 +33,9 @@
                                 <h2>Login</h2>
                             </div>
                             <div class="login-form">
-                                <form action="#">
-                                    <div class="form-fild">
-                                        <p><label>Username or email address <span class="required">*</span></label></p>
+                                <form action="loginHandler.php" method="POST">
+                                <div class="form-fild">
+                                        <p><label>Username <span class="required">*</span></label></p>
                                         <input name="username" value="" type="text">
                                     </div>
                                     <div class="form-fild">
@@ -44,14 +44,8 @@
                                     </div>
                                     <div class="login-submit">
                                         <button type="submit" class="btn">Login</button>
-                                        <label>
-                                            <input class="checkbox" name="rememberme" value="" type="checkbox">
-                                            <span>Remember me</span>
-                                        </label>
                                     </div>
-                                    <div class="lost-password">
-                                        <a href="#">Lost your password?</a>
-                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
@@ -64,18 +58,27 @@
                                 <h2>Register</h2>
                             </div>
                             <div class="register-form">
-                                <form action="#">
+                                <form action="registerHandler.php" method="POST">
                                     <div class="form-fild">
-                                        <p><label>Username or email address <span class="required">*</span></label></p>
+                                    <div class="form-fild">
+                                        <p><label>Username <span class="required">*</span></label></p>
                                         <input name="username" value="" type="text">
+                                    </div>
+                                        <p><label>Email Address <span class="required">*</span></label></p>
+                                        <input name="email" value="" type="email">
                                     </div>
                                     <div class="form-fild">
                                         <p><label>Password <span class="required">*</span></label></p>
                                         <input name="password" value="" type="password">
                                     </div>
+                                    <div class="form-fild">
+                                        <p><label>Retype Password <span class="required">*</span></label></p>
+                                        <input name="password2" value="" type="password">
+                                    </div>
                                     <div class="register-submit">
                                         <button type="submit" class="btn">Register</button>
                                     </div>
+                                    
                                 </form>
                             </div>
                         </div>

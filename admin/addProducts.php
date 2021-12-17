@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <?php
+  require('../connect.php');
+  require('productHandler.php');
   include('adminfiles/session.php');
     include('adminfiles/head.php')
     ?>
@@ -30,7 +32,7 @@
             </div>
             <div class="col-sm-6"> 
 
-            <form role="form"  method="post" enctype="multipart/form-data">
+            <form role="form" action="" method="post" enctype="multipart/form-data">
               <h1>Add Product</h1>
               <div class="box-body">
                 <div class="form-group">
@@ -46,9 +48,12 @@
                   <input type="file" id="picture" name="file">
                 </div>
                 <div class="form-group">
-                  <label for="description">Product description</label>
-                  <textarea id="description" class="form-control" rows="5" placeholder="Enter description" name="description">
-                  </textarea>
+                  <label for="picture">File input</label>
+                  <input type="file" id="picture1" name="file1">
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
@@ -67,7 +72,7 @@
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
               </div>
             </form>
           </div>

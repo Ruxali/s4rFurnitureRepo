@@ -445,7 +445,7 @@
     if (input.data(_iCheck)) {
 
       // Remove everything except input
-      input.parent().html(input.attr('style', input.data(_iCheck).s || ''));
+      input.parent().php(input.attr('style', input.data(_iCheck).s || ''));
 
       // Callback
       if (callback) {

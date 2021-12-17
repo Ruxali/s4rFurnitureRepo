@@ -1,5 +1,5 @@
 <?php
-    include('header.php');
+    require('header.php');
 ?>
 
 
@@ -250,21 +250,21 @@
                                 <div class="product-label">
                                     <span>-20%</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-1.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Stylish Design Chair</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Stylish Design Chair</a></h3>
                                 <p class="product-price"><span class="discounted-price">$190.00</span> <span class="main-price discounted">$230.00</span></p>
                             </div>
                         </div>
@@ -278,21 +278,21 @@
                                 <div class="product-label">
                                     <span>-20%</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-3.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Miro Dining Table</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Miro Dining Table</a></h3>
                                 <p class="product-price"><span class="discounted-price">$113.00</span> <span class="main-price discounted">$180.00</span></p>
                                 <div class="product-countdown-two" data-countdown2="2020/06/01"></div>
                             </div>
@@ -307,21 +307,21 @@
                                 <div class="product-label">
                                     <span>-20%</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-4.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-1.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Janus Table Lamp</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Janus Table Lamp</a></h3>
                                 <p class="product-price"><span class="discounted-price">$86.00</span> <span class="main-price discounted">$150.00</span></p>
                             </div>
                         </div>
@@ -332,20 +332,20 @@
                         <!--  Single Grid product Start -->
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-3.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Discus Floor and Table</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Discus Floor and Table</a></h3>
                                 <p class="product-price"><span class="discounted-price">$290.00</span> <span class="main-price discounted">$330.00</span></p>
                             </div>
                         </div>
@@ -359,21 +359,21 @@
                                 <div class="product-label">
                                     <span class="sale">Sale</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-5.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Sled Mini Sideboard</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Sled Mini Sideboard</a></h3>
                                 <p class="product-price"><span class="discounted-price">$90.00</span></p>
                             </div>
                         </div>
@@ -387,21 +387,21 @@
                                 <div class="product-label">
                                     <span class="sale">New</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-6.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-4.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Mega 2 Seater Sofa</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Mega 2 Seater Sofa</a></h3>
                                 <p class="product-price"><span class="discounted-price">$390.00</span> <span class="main-price discounted">$470.00</span></p>
                             </div>
                         </div>
@@ -415,20 +415,20 @@
                                 <div class="product-label">
                                     <span>-20%</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-7.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Sentei Pruning Shears</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Sentei Pruning Shears</a></h3>
                                 <p class="product-price"><span class="discounted-price">$65.00</span> </p>
                             </div>
                         </div>
@@ -442,21 +442,21 @@
                                 <div class="product-label">
                                     <span>-29%</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-8.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-2.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Affordances Side Table</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Affordances Side Table</a></h3>
                                 <p class="product-price"><span class="discounted-price">$170.00</span> <span class="main-price discounted">$280.00</span></p>
                             </div>
                         </div>
@@ -467,21 +467,21 @@
                         <!--  Single Grid product Start -->
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-9.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-10.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Normal Dining chair</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Normal Dining chair</a></h3>
                                 <p class="product-price"><span class="discounted-price">$130.00</span> </p>
                             </div>
                         </div>
@@ -495,21 +495,21 @@
                                 <div class="product-label">
                                     <span class="sale">Sale</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-11.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-12.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Tripod lampshade</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Tripod lampshade</a></h3>
                                 <p class="product-price"><span class="discounted-price">$210.00</span> <span class="main-price discounted">$240.00</span></p>
                             </div>
                         </div>
@@ -520,21 +520,21 @@
                         <!--  Single Grid product Start -->
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-10.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-13.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Hot Design Table</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Hot Design Table</a></h3>
                                 <p class="product-price"><span class="discounted-price">$250.00</span> <span class="main-price discounted">$280.00</span></p>
                             </div>
                         </div>
@@ -545,20 +545,20 @@
                         <!--  Single Grid product Start -->
                         <div class="single-grid-product mb-40">
                             <div class="product-image">
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-14.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Outdoor Lock Chair</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Outdoor Lock Chair</a></h3>
                                 <p class="product-price"><span class="discounted-price">$180.00</span></p>
                             </div>
                         </div>
@@ -572,21 +572,21 @@
                                 <div class="product-label">
                                     <span class="sale">New</span>
                                 </div>
-                                <a href="single-product.php">
+                                <a href="single-product.html">
                                     <img src="./assets/images/product/product-14.jpg" class="img-fluid" alt="">
                                     <img src="./assets/images/product/product-13.jpg" class="img-fluid" alt="">
                                 </a>
 
                                 <div class="product-action">
                                     <ul>
-                                        <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                        <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
                                         <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="wishlit.php"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h3 class="title"> <a href="single-product.php">Classic Chair</a></h3>
+                                <h3 class="title"> <a href="single-product.html">Classic Chair</a></h3>
                                 <p class="product-price"><span class="discounted-price">$60.00</span> </p>
                             </div>
                         </div>
@@ -597,8 +597,9 @@
             </div>
         </div>
         <!--Product section end-->
+        
         <?php
-    include('footer.php');
+    require('footer.php');
 ?>
     </div>
 

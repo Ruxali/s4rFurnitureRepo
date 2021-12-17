@@ -47,8 +47,9 @@ INSERT INTO `admins` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO INCREMENT,
   `name` varchar(255) NOT NULL,
+`image` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` int(11) NOT NULL
