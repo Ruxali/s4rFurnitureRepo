@@ -131,10 +131,10 @@ CREATE TABLE `order_details` (
 --
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `price` int(11) NOT NULL,
-  `image1` varchar(30) NOT NULL,
+  `image1` varchar(255) NOT NULL,
   `image2` varchar(255) NOT NULL,
   `description` mediumtext NOT NULL,
   `category_id` int(11) NOT NULL,
