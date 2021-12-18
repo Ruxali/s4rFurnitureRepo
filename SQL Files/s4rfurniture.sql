@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2021 at 08:17 AM
+-- Generation Time: Dec 18, 2021 at 02:31 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -62,10 +62,11 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`, `status`, `fileurl`) VALUES
 (1, 'Bed', '../uploads/61bae2e828a490.78876940.png', '2021-12-16 06:55:36', '2021-12-16 06:55:36', 1, ''),
-(2, 'Couch', '../uploads/61bae2fe0aa3e1.91137034.png', '2021-12-16 06:55:58', '2021-12-16 06:55:58', 1, ''),
-(3, 'Cupboard', '../uploads/61bae3129a2808.11368174.jpg', '2021-12-16 06:56:18', '2021-12-16 06:56:18', 1, ''),
-(4, 'Kitchen ', '../uploads/61bae3289d3075.55933036.png', '2021-12-16 06:56:40', '2021-12-16 06:56:40', 1, ''),
-(5, 'Table', '../uploads/61bae34032cb10.93526442.png', '2021-12-16 06:57:04', '2021-12-16 06:57:04', 1, '');
+(2, 'Chair', '../uploads/61bc3dfa56d052.51932823.jpg', '2021-12-17 07:36:26', '2021-12-17 07:36:26', 1, ''),
+(3, 'Couch', '../uploads/61bae2fe0aa3e1.91137034.png', '2021-12-16 06:55:58', '2021-12-16 06:55:58', 1, ''),
+(4, 'Cupboard', '../uploads/61bae3129a2808.11368174.jpg', '2021-12-16 06:56:18', '2021-12-16 06:56:18', 1, ''),
+(5, 'Kitchen ', '../uploads/61bae3289d3075.55933036.png', '2021-12-16 06:56:40', '2021-12-16 06:56:40', 1, ''),
+(6, 'Table', '../uploads/61bae34032cb10.93526442.png', '2021-12-16 06:57:04', '2021-12-16 06:57:04', 1, '');
 
 -- --------------------------------------------------------
 
@@ -144,6 +145,16 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `image1`, `image2`, `description`, `category_id`, `created_at`, `updated_at`, `status`) VALUES
+(1, 'King Size Bed ', 50000, '../uploads/61bd960ab9e0b_bed1a.jpg', '../uploads/61bd960abbcc8_bed1b.jpg', 'Size	King\r\nMaterial	Linen\r\nColor	Grey\r\nFurniture Finish	Metallic\r\nStyle	Contemporary', 1, '2021-12-18 08:04:26', '2021-12-18 08:04:26', 1),
+(2, 'Queen size bed', 3000, '../uploads/61bda139c6635_bed2a.jpg', '../uploads/61bda139d012b_bed2b.jpg', 'Size=	Queen\r\nMaterial=	Wood\r\nColor=	Burgundy\r\nProduct Dimensions=	84.3\"L x 65\"W x 40\"H', 1, '2021-12-18 08:52:09', '2021-12-18 08:52:09', 1),
+(3, 'Metal Platform Bed', 25000, '../uploads/61bdaece7acc5_bed3a.jpg', '../uploads/61bdaece7b457_bed3b.jpg', 'Size=	Queen,\r\nMaterial=	Wood, Alloy Steel,\r\nColor=	Black,\r\nStyle=	Standard', 1, '2021-12-18 09:50:06', '2021-12-18 09:50:06', 1),
+(4, 'Stairway Bunk Trundle Bed', 28000, '../uploads/61bdcf2f335ec_bed4a.jpg', '../uploads/61bdcf2f34341_bed4b.jpg', 'Size:	Twin over Full\r\nMaterial:	Wood\r\nColor:	Grey\r\nFurniture Finish:	Pine\r\nStyle:	Traditional', 1, '2021-12-18 12:08:15', '2021-12-18 12:08:15', 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -197,7 +208,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -221,7 +232,7 @@ ALTER TABLE `order_details`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
