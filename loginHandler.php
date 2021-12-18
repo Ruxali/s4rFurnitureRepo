@@ -17,21 +17,14 @@ if (isset($_POST['login'])) {
   $_SESSION['customerid']=$final['id'];
 
   
-if($status == '1'){
+
     if($username=$final['username'] AND $password=$final['password']){
-        header('location: ../cart.php');
+        header('location: my-account.php');
       } else {
-        if($username=$final['username'] AND $password=$final['password']){
-    header('location: ../cart.php');
-  } else {
-    echo"<script> alert('wrong credentials');
-    window.location.href='../customerforms.php';
-    </script>";
+        echo"<script> alert('wrong credentials');
+        window.location.href='login-register.php';
+        </script>";
   }
-      }
-}else{
-    echo"<script> alert('Not verified! Contact Admin ');
-    window.location.href='../customerforms.php';
-    </script>";
+ 
 }
-}
+?>
