@@ -43,7 +43,7 @@
                                         <input name="password" value="" type="password">
                                     </div>
                                     <div class="login-submit">
-                                        <button type="submit" class="btn">Login</button>
+                                        <button type="submit"name="login" class="btn">Login</button>
                                     </div>
                                     
                                 </form>

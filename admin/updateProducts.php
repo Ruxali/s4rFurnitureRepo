@@ -1,224 +1,152 @@
 <!DOCTYPE html>
 <html>
-  <?php
-    require('../connect.php');
-    require('productHandler.php');
-  include('adminfiles/session.php');
-    include('adminfiles/head.php')
-    ?>
-    <?php 
-$err=[];
-$ini_code="NULL";
-if(isset($_POST['submit'])){ 
-    // print_r($_POST); 
-    // print_r($_FILES);
-    $name = $_POST['name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    $status = 1;    
-    
+<?php
+require('../connect.php');
+require('productHandler.php');
+include('adminfiles/session.php');
+include('adminfiles/head.php')
+?>
+<?php
 
-        if (isset($_FILES['picture']['error'] )&& $_FILES['picture']['error'] == 0)
-        {
-            if ($_FILES['picture']['error']<=1024000) 
-            {
-                $types = ['image/png','image/jpeg','image/gif','image/jpg','image/webp'];
-                if (in_array($_FILES['picture']['type'] , $types)) 
-                {
-                    //generate random number
-                    // $file_namea=$image_url1;
-                    $file_namea=uniqid().'_'.$_FILES['picture']['name'];
-                    //upload files to server
-                    if(move_uploaded_file($_FILES['picture']['tmp_name'], 'image/'.$file_namea))
-                    {
-                        $image_urla="image/$file_namea";
-                    }
-                    else{
-                        $err['file can not move to server'];
-                    }
-                }
-                else{
-                    $err['picture']='invalid types';
-                }
+if (isset($_POST['submit'])) {
+  $name = $_POST['name'];
+  $price = $_POST['price'];
+  $description = $_POST['description'];
+  $category = $_POST['category'];
+  $files = $_FILES['file'];
+
+
+  //check ectension of image
+  $fileName = $_FILES['file']['name'];
+  $fileTmpName = $_FILES['file']['tmp_name'];
+  $fileSize = $_FILES['file']['size'];
+  $fileError = $_FILES['file']['error'];
+  $fileType = $_FILES['file']['type'];
+
+  $fileExt = explode('.', $fileName);
+  $fileActualExt = strtolower(end($fileExt));
+
+  $allowed = array('jpg', 'jpeg', 'png');
+
+  if (in_array($fileActualExt, $allowed)) {
+    if ($fileError === 0) {
+      if ($fileSize < 5000000) {
+        $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+        $fileDestination = '../uploads/' . $fileNameNew;
+        move_uploaded_file($fileTmpName, $fileDestination);
+
+        //image 2
+        $filess = $_FILES['file1'];
+        $filesName = $_FILES['file1']['name'];
+        $filesTmpName = $_FILES['file1']['tmp_name'];
+        $filesSize = $_FILES['file1']['size'];
+        $filesError = $_FILES['file1']['error'];
+        $filesType = $_FILES['file1']['type'];
+
+        $filesExt = explode('.', $filesName);
+        $filesActualExt = strtolower(end($filesExt));
+
+        $allowedd = array('jpg', 'jpeg', 'png');
+
+        if (in_array($filesActualExt, $allowedd)) {
+          if ($filesError === 0) {
+            if ($filesSize < 5000000) {
+              $filesNameNew = uniqid('', true) . "." . $filesActualExt;
+              $filesDestination = '../uploads/' . $filesNameNew;
+              move_uploaded_file($filesTmpName, $filesDestination);
+
+              //insert into db
+              $savecategory = "UPDATE products SET `name` = '$name', `price` = '$price',`description` = '$description',`image1` = '$fileDestination',`image2` = '$filesDestination' WHERE id='$id'";
+              if ($connect->query($savecategory)) {
+                // if saved entry 
+                #2.header location
+                header("Location: productsshow.php?uploadsuccess");
+              } else {
+                //if not saved in database print why not error
+                die("insert failed $connect->error");
+              }
+            } else {
+              echo "Your file is too large!";
             }
-            else{
-                $err['picture']='Image size';
-            }       
-        }
-        else{
-            // $err['photo']='file error vayo';
-            $image_urla = $_POST['image1'];
-
-        }
-        if (isset($_FILES['picture2']['error'] )&& $_FILES['picture2']['error'] == 0)
-        {
-            if ($_FILES['picture2']['error']<=1024000) 
-            {
-                $types = ['image/png','image/jpeg','image/gif','image/jpg','image/webp'];
-                if (in_array($_FILES['picture2']['type'] , $types)) 
-                {
-                    //generate random number
-                    // $file_namea=$image_url1;
-                    $file_namea=uniqid().'_'.$_FILES['picture2']['name'];
-                    //upload files to server
-                    if(move_uploaded_file($_FILES['picture2']['tmp_name'], 'image/'.$file_namea))
-                    {
-                        $image_urla="image/$file_namea";
-                    }
-                    else{
-                        $err['file can not move to server'];
-                    }
-                }
-                else{
-                    $err['picture2']='invalid types';
-                }
-            }
-            else{
-                $err['picture2']='Image size';
-            }       
-        }
-        else{
-            // $err['photo']='file error vayo';
-            $image_url = $_POST['image2'];
-
-        }
-        if (isset($_FILES['picture3']['error'] )&& $_FILES['picture3']['error'] == 0)
-        {
-            if ($_FILES['picture3']['error']<=1024000) 
-            {
-                $types = ['image/png','image/jpeg','image/gif','image/jpg','image/webp'];
-                if (in_array($_FILES['picture3']['type'] , $types)) 
-                {
-                    //generate random number
-                    // $file_namea=$image_url1;
-                    $file_namea=uniqid().'_'.$_FILES['picture3']['name'];
-                    //upload files to server
-                    if(move_uploaded_file($_FILES['picture3']['tmp_name'], 'image/'.$file_namea))
-                    {
-                        $image_urla="image/$file_namea";
-                    }
-                    else{
-                        $err['file can not move to server'];
-                    }
-                }
-                else{
-                    $err['picture3']='invalid types';
-                }
-            }
-            else{
-                $err['picture3']='Image size';
-            }       
-        }
-        else{
-            // $err['photo']='file error vayo';
-            $image_urlb = $_POST['image3'];
-
-        }
-        if (isset($_FILES['picture4']['error'] )&& $_FILES['picture4']['error'] == 0)
-        {
-            if ($_FILES['picture4']['error']<=1024000) 
-            {
-                $types = ['image/png','image/jpeg','image/gif','image/jpg','image/webp'];
-                if (in_array($_FILES['picture4']['type'] , $types)) 
-                {
-                    //generate random number
-                    // $file_namea=$image_url1;
-                    $file_namea=uniqid().'_'.$_FILES['picture4']['name'];
-                    //upload files to server
-                    if(move_uploaded_file($_FILES['picture4']['tmp_name'], 'image/'.$file_namea))
-                    {
-                        $image_urla="image/$file_namea";
-                    }
-                    else{
-                        $err['file can not move to server'];
-                    }
-                }
-                else{
-                    $err['picture4']='invalid types';
-                }
-            }
-            else{
-                $err['picture4']='Image size';
-            }       
-        }
-        else{
-            // $err['photo']='file error vayo';
-            $image_urlc = $_POST['image4'];
-
-        }
-
-
-    $id = $_POST['id'];
-    	//count no of error into form
-	if (count($err) == 0) {
-		//include database connection 
-		require_once '../connect.php';
-		//sql query to insert data into database taken from form
-		$sql = "UPDATE products SET `name` = '$name', `price` = '$name',`description` = '$description',`image` = '$image_url' WHERE id='$id'";
-		//execute query
-		if ($connect->query($sql)){	
-            ?>  
-            <script type="text/javascript">
-            window.location.href = 'productsshow.php?success=1';
-            </script>
-            <?php
+          } else {
+            echo "There was an error!";
+          }
         } else {
-			die("Product updated failed $connect->error");
-		}
-			
-
-	}
-
+          echo "You cannot upload files of this type";
+        }
+      } else {
+        echo "Your file is too large!";
+      }
+    } else {
+      echo "There was an error!";
+    }
+  } else {
+    echo "You cannot upload files of this type";
+  }
 }
 
 
-if(isset($_GET['id'])) {  
-    // echo "mission 1 success";
-    $id= $_GET['id'];
+if (isset($_GET['id'])) {
+  // echo "mission 1 success";
+  $id = $_GET['id'];
 
-    $sql = "SELECT * FROM products WHERE id='$id' ";
-  $res = mysqli_query($connect,$sql);
+  $sql = "SELECT * FROM products WHERE id='$id' ";
+  $res = mysqli_query($connect, $sql);
   $row = $res->fetch_assoc();
 
-//   $i = 1;
+  //   $i = 1;
 }
 ?>
-  <body class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
-      <?php
-        include('adminfiles/header.php')
-        ?>
-      <!-- Left side column. contains the logo and sidebar -->
-      <?php
-        include('adminfiles/aside.php');
-        ?>
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <center><h1>
-            PRODUCTS
-          </h1></center>
-        </section>
-          
-        <!-- Main content -->
-        <section class="content">
-          <div class="row">
-            <div class="col-sm-3">
-              
-            </div>
-            <div class="col-sm-6"> 
 
-            <form role="form"  method="post" enctype="multipart/form-data">
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+    <?php
+    include('adminfiles/header.php')
+    ?>
+    <!-- Left side column. contains the logo and sidebar -->
+    <?php
+    include('adminfiles/aside.php');
+    ?>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <center>
+          <h1>
+            PRODUCTS
+          </h1>
+        </center>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-sm-3">
+
+          </div>
+          <div class="col-sm-6">
+
+            <form role="form" method="post" enctype="multipart/form-data">
+              <?php
+
+              if (isset($_GET['id'])) {
+                // echo "mission 1 success";
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM products WHERE id='$id' ";
+                $res = mysqli_query($connect, $sql);
+                $row = $res->fetch_assoc();
+
+              }
+              ?>
               <h1>Update Product</h1>
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Product name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter product name" name="name" value="<?php echo $row['name'];?>">
+                  <input type="text" class="form-control" id="name" placeholder="Enter product name" name="name" value="<?php echo $row['name'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Enter amount" name="price" value="<?php echo $row['price'];?>">
+                  <input type="text" class="form-control" id="price" placeholder="Enter amount" name="price" value="<?php echo  $row['price'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
@@ -226,30 +154,21 @@ if(isset($_GET['id'])) {
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture2" name="file">
+                  <input type="file" id="picture1" name="file1">
                 </div>
                 <div class="form-group">
-                  <label for="picture">File input</label>
-                  <input type="file" id="picture3" name="file">
-                </div>
-                <div class="form-group">
-                  <label for="picture">File input</label>
-                  <input type="file" id="picture4" name="file">
-                </div>
-                <div class="form-group">
-                  <label for="description">Product description</label>
-                  <textarea id="description" class="form-control" rows="5" placeholder="Enter description" name="description" value="<?php echo $row['description'];?>">
-                  </textarea>
+                  <label for="description">Description</label>
+                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description" value="<?php echo $row['description'] ?>"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
                   <select id="category" name="category">
                     <?php
-                    include('../connect.php');
-                    $cat="SELECT * from categories";
-                    $results=mysqli_query($connect,$cat);
-                    while($row=mysqli_fetch_assoc($results)){
-                    echo "<option value=".$row['id'].">".$row['name']."</option>";
+                    include('connect.php');
+                    $cat = "SELECT * from categories";
+                    $results = mysqli_query($connect, $cat);
+                    while ($row = mysqli_fetch_assoc($results)) {
+                      echo "<option value=" . $row['id'] . ">" . $row['name'] . "</option>";
                     }
                     ?>
                   </select>
@@ -262,16 +181,17 @@ if(isset($_GET['id'])) {
               </div>
             </form>
           </div>
-          </div>
-        </section>
-        <!-- /.content -->
-        <div class="col-sm-3">
         </div>
+      </section>
+      <!-- /.content -->
+      <div class="col-sm-3">
       </div>
-      <!-- /.content-wrapper -->
     </div>
-    <?php
-      include('adminfiles/footer.php');
-      ?>
-  </body>
+    <!-- /.content-wrapper -->
+  </div>
+  <?php
+  include('adminfiles/footer.php');
+  ?>
+</body>
+
 </html>

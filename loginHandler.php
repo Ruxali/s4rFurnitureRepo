@@ -17,7 +17,7 @@ if (isset($_POST['login'])) {
   $_SESSION['customerid']=$final['id'];
 
   
-
+if($status == '1'){
     if($username=$final['username'] AND $password=$final['password']){
         header('location: my-account.php');
       } else {
@@ -25,6 +25,11 @@ if (isset($_POST['login'])) {
         window.location.href='login-register.php';
         </script>";
   }
- 
+      
+}else{
+    echo"<script> alert('Not verified! Contact Admin ');
+    window.location.href='login-register.php';
+    </script>";
+}
 }
 ?>
