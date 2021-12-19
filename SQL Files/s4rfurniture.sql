@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 02:31 PM
+-- Generation Time: Dec 19, 2021 at 12:55 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -132,7 +132,7 @@ CREATE TABLE `order_details` (
 --
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `price` int(11) NOT NULL,
   `image1` varchar(255) NOT NULL,
