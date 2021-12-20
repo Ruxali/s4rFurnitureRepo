@@ -5,18 +5,18 @@ include('connect.php');
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password =  $_POST['password'];
-    $status = $_POST['status'];
+    
 
-    $sql="SELECT * from customers Where username='$username' AND password='$password'";
+    $sql="SELECT * FROM customers WHERE username='$username' AND password='$password'";
   $results=$connect->query($sql);
-  $final=$results->fetch_assoc();
+  while($final=$results->fetch_assoc()){
+  $status = $final['status'];}
 
   $_SESSION['username']=$final['username'];
   $_SESSION['password']=$final['password'];
 
   $_SESSION['customerid']=$final['id'];
 
-  
 if($status == '1'){
     if($username=$final['username'] AND $password=$final['password']){
         header('location: my-account.php');

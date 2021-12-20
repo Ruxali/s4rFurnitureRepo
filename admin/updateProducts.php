@@ -7,14 +7,12 @@ include('adminfiles/session.php');
 include('adminfiles/head.php')
 ?>
 <?php
-
 if (isset($_POST['submit'])) {
   $name = $_POST['name'];
   $price = $_POST['price'];
   $description = $_POST['description'];
   $category = $_POST['category'];
   $files = $_FILES['file'];
-
 
   //check ectension of image
   $fileName = $_FILES['file']['name'];
@@ -29,72 +27,60 @@ if (isset($_POST['submit'])) {
   $allowed = array('jpg', 'jpeg', 'png');
 
   if (in_array($fileActualExt, $allowed)) {
-    if ($fileError === 0) {
-      if ($fileSize < 5000000) {
-        $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-        $fileDestination = '../uploads/' . $fileNameNew;
-        move_uploaded_file($fileTmpName, $fileDestination);
+      if ($fileError === 0) {
+          if ($fileSize < 5000000) {
+              $fileNameNew = uniqid() . '_' . $fileName;
+              $fileDestination = '../uploads/' . $fileNameNew;
+              move_uploaded_file($fileTmpName, $fileDestination);
 
-        //image 2
-        $filess = $_FILES['file1'];
-        $filesName = $_FILES['file1']['name'];
-        $filesTmpName = $_FILES['file1']['tmp_name'];
-        $filesSize = $_FILES['file1']['size'];
-        $filesError = $_FILES['file1']['error'];
-        $filesType = $_FILES['file1']['type'];
+              //image 2
+              $filess = $_FILES['file1'];
+              $filesName = $_FILES['file1']['name'];
+              $filesTmpName = $_FILES['file1']['tmp_name'];
+              $filesSize = $_FILES['file1']['size'];
+              $filesError = $_FILES['file1']['error'];
+              $filesType = $_FILES['file1']['type'];
 
-        $filesExt = explode('.', $filesName);
-        $filesActualExt = strtolower(end($filesExt));
+              $filesExt = explode('.', $filesName);
+              $filesActualExt = strtolower(end($filesExt));
 
-        $allowedd = array('jpg', 'jpeg', 'png');
+              $allowedd = array('jpg', 'jpeg', 'png');
 
-        if (in_array($filesActualExt, $allowedd)) {
-          if ($filesError === 0) {
-            if ($filesSize < 5000000) {
-              $filesNameNew = uniqid('', true) . "." . $filesActualExt;
-              $filesDestination = '../uploads/' . $filesNameNew;
-              move_uploaded_file($filesTmpName, $filesDestination);
+              if (in_array($filesActualExt, $allowedd)) {
+                  if ($filesError === 0) {
+                      if ($filesSize < 5000000) {
+                          $filesNameNew = uniqid() . '_' . $filesName;
+                          $filesDestination = '../uploads/' . basename($filesNameNew);
+                          move_uploaded_file($filesTmpName, $filesDestination);
 
-              //insert into db
-              $savecategory = "UPDATE products SET `name` = '$name', `price` = '$price',`description` = '$description',`image1` = '$fileDestination',`image2` = '$filesDestination' WHERE id='$id'";
-              if ($connect->query($savecategory)) {
-                // if saved entry 
-                #2.header location
-                header("Location: productsshow.php?uploadsuccess");
+                          //insert into db
+                          $savecategory = "UPDATE products SET `name` = '$name', `price` = '$price',`description` = '$description',`image1` = '$fileDestination',`image2` = '$filesDestination' WHERE id='$id'";
+                          if ($connect->query($savecategory)) {
+                              // if saved entry 
+                              #2.header location
+                              echo "Inserted successfully!";
+                          } else {
+                              //if not saved in database print why not error
+                              die("insert failed $connect->error");
+                          }
+                      } else {
+                          echo "Your file is too large!";
+                      }
+                  } else {
+                      echo "There was an error!";
+                  }
               } else {
-                //if not saved in database print why not error
-                die("insert failed $connect->error");
+                  echo "You cannot upload files of this type";
               }
-            } else {
-              echo "Your file is too large!";
-            }
           } else {
-            echo "There was an error!";
+              echo "Your file is too large!";
           }
-        } else {
-          echo "You cannot upload files of this type";
-        }
       } else {
-        echo "Your file is too large!";
+          echo "There was an error!";
       }
-    } else {
-      echo "There was an error!";
-    }
   } else {
-    echo "You cannot upload files of this type";
+      echo "You cannot upload files of this type";
   }
-}
-
-
-if (isset($_GET['id'])) {
-  // echo "mission 1 success";
-  $id = $_GET['id'];
-
-  $sql = "SELECT * FROM products WHERE id='$id' ";
-  $res = mysqli_query($connect, $sql);
-  $row = $res->fetch_assoc();
-
-  //   $i = 1;
 }
 ?>
 
@@ -122,16 +108,16 @@ if (isset($_GET['id'])) {
       <section class="content">
         <div class="row">
           <div class="col-sm-3">
-
+          
           </div>
           <div class="col-sm-6">
 
-            <form role="form" method="post" enctype="multipart/form-data">
+            <form role="form" action="" method="post" enctype="multipart/form-data">
               <?php
-
-              if (isset($_GET['id'])) {
-                // echo "mission 1 success";
-                $id = $_GET['id'];
+              include("../connect.php");
+              if(isset($_GET['id'])){
+              $id = $_GET['id'];
+echo('$id');
                 $sql = "SELECT * FROM products WHERE id='$id' ";
                 $res = mysqli_query($connect, $sql);
                 $row = $res->fetch_assoc();
@@ -150,11 +136,11 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture" name="file">
+                  <input type="file" id="picture" name="file" value="<?php echo  $row['image1'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture1" name="file1">
+                  <input type="file" id="picture1" name="file1" value="<?php echo  $row['image2'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>

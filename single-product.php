@@ -28,7 +28,7 @@ require('header.php');
                         <?php
                         include("connect.php");
                         $id = $_GET['id'];
-                        $sql = "Select * from products where id='$id'";
+                        $sql = "SELECT c.name AS catname, d.* FROM products d JOIN categories c ON d.category_id = c.id  WHERE d.id='$id'";
                         $results = $connect->query($sql);
                         $row = $results->fetch_assoc();
 
@@ -61,14 +61,7 @@ require('header.php');
                                                     $display = substr($path, 3);
                                                     echo $display; ?>" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
                                     </div>
-                                    <div class="lg-image">
-                                        <img src=".<?php $path = $row['image2'];
-                                                    $display = substr($path, 3);
-                                                    echo $display; ?>" alt="">
-                                        <a href="<?php $path = $row['image2'];
-                                                    $display = substr($path, 3);
-                                                    echo $display; ?>" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-expand"></i></a>
-                                    </div>
+                                    
 
                                 </div>
                                 <div class="product-details-thumbs">
@@ -125,9 +118,8 @@ require('header.php');
                                 </div>
                                 <div class="product-meta">
                                     <span class="posted-in">
-                                        Categories:
-                                        <a href="#">Accessories</a>,
-                                        <a href="#">Electronics</a>
+                                        Category:
+                                        <a href="#"><?php echo $row['catname'] ?></a>
                                     </span>
                                 </div>
                                 <div class="single-product-sharing">
@@ -260,50 +252,54 @@ require('header.php');
                 </div>
             </div>
         </div>
-        <?php
 
-include("connect.php");
-$sql = "select * from products ORDER BY RAND() LIMIT 4";
-$results = $connect->query($sql);
-
-while ($row = $results->fetch_assoc()) {
-
-?>
         <div class="row product-slider">
-            <div class="col">
+            <?php
 
-                <!--  Single Grid product Start -->
-                <div class="single-grid-product mb-40">
-                    <div class="product-image">
-                        <a href="single-product.php?id=<?php echo $row['id']; ?>">
-                            <img style="height: 270px!important;width: 290px!important; " src="<?php $path = $row['image1'];
-                                                                                                $display = substr($path, 3);
-                                                                                                echo $display; ?>" class="img-fluid" alt="">
-                            <img style="height: 270px!important;width: 290px!important; " src="<?php $path = $row['image2'];
-                                                                                                $display = substr($path, 3);
-                                                                                                echo $display; ?>" class="img-fluid" alt="">
-                        </a>
+            include("connect.php");
+            $sql = "select * from products ORDER BY RAND() LIMIT 4";
+            $results = $connect->query($sql);
 
-                        <div class="product-action">
-                            <ul>
-                                <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
-                                <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
-                                <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
-                            </ul>
+            while ($row = $results->fetch_assoc()) {
+
+            ?>
+                <div class="col">
+
+                    <!--  Single Grid product Start -->
+                    <div class="single-grid-product mb-40">
+                        <div class="product-image">
+                            <a href="single-product.php?id=<?php echo $row['id']; ?>">
+                                <img style="height: 270px!important;width: 290px!important; " src="<?php $path = $row['image1'];
+                                                                                                    $display = substr($path, 3);
+                                                                                                    echo $display; ?>" class="img-fluid" alt="">
+                                <img style="height: 270px!important;width: 290px!important; " src="<?php $path = $row['image2'];
+                                                                                                    $display = substr($path, 3);
+                                                                                                    echo $display; ?>" class="img-fluid" alt="">
+                            </a>
+
+                            <div class="product-action">
+                                <ul>
+                                    <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
+                                    <li>
+                                        <a href="#quick-view-modal-container" data-toggle="modal" title="Quick View" onclick="viewdata(<?php echo $row['id'] ?>)"><i class="fa fa-eye"></i></a>
+
+                                    </li>
+                                    <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title"> <a href="single-product.html"><?php echo $row['name'] ?></a></h3>
+                            <p class="product-price"><span class="discounted-price">Rs. <?php echo $row['price'] ?></span> </p>
                         </div>
                     </div>
-                    <div class="product-content">
-                        <h3 class="title"> <a href="single-product.html"><?php echo $row['name']?></a></h3>
-                        <p class="product-price"><span class="discounted-price">Rs. <?php echo $row['price']?></span> </p>
-                    </div>
+                    <!--  Single Grid product End -->
                 </div>
-                <!--  Single Grid product End -->
-            </div>
 
-
+            <?php } ?>
 
         </div>
-        <?php } ?>
+
 
     </div>
 </div>
@@ -323,6 +319,35 @@ require('footer.php');
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/plugins/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    function viewdata(id) {
+        console.log('button has been clicked');
+        $.ajax({
+            url: "fetch.php",
+            method: 'POST',
+            data: {
+                'view': id
+            },
+            success: function(data) {
+                //  console.log('data was transfered');
+                var contenzzz = document.getElementById('quick-view-modal-container');
+                contenzzz.innerHTML = data;
+                // contenzzz.setAttribute("aria-hidden", "false");
+                // contenzzz.classList.add('show');
+                // contenzzz.style.display = 'block';
+            }
+        })
+    }
+
+    function closedata() {
+        var contenzzz = document.getElementById('quick-view-modal-container');
+        contenzzz.style.display = 'none';
+        contenzzz.classList.remove('show');
+        contenzzz.setAttribute("aria-hidden", "true");
+
+
+    }
+</script>
 
 </body>
 

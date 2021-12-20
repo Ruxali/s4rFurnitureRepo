@@ -82,23 +82,24 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                 <div class="col-12">
                                     <div class="shop-product">
                                         <div id="myTabContent-2" class="tab-content">
-                                            <?php
 
-                                            include("connect.php");
-                                            $sql = "select * from products";
-                                            $results = $connect->query($sql);
+                                            <div id="grid" class="tab-pane fade active show">
+                                                <div class="product-grid-view">
+                                                    <div class="row">
+                                                        <?php
 
-                                            $productdata=[];
-            if($results->num_rows > 0){
-                while ($row_product = $results->fetch_assoc()){
-                    array_push($productdata,$row_product);
-                }
-            } 
-            foreach($productdata as $key => $row){
-            ?>
-                                                <div id="grid" class="tab-pane fade active show">
-                                                    <div class="product-grid-view">
-                                                        <div class="row">
+                                                        include("connect.php");
+                                                        $sql = "select * from products";
+                                                        $results = $connect->query($sql);
+
+                                                        $productdata = [];
+                                                        if ($results->num_rows > 0) {
+                                                            while ($row_product = $results->fetch_assoc()) {
+                                                                array_push($productdata, $row_product);
+                                                            }
+                                                        }
+                                                        foreach ($productdata as $key => $row) {
+                                                        ?>
                                                             <div class="col-lg-3 col-md-6 col-sm-6">
                                                                 <!--  Single Grid product Start -->
                                                                 <div class="single-grid-product mb-40">
@@ -115,7 +116,10 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                                         <div class="product-action">
                                                                             <ul>
                                                                                 <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
-                                                                                <li><a href="#quick-view-modal-container" data-toggle="modal" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                                                <li>
+                                                                                <a href="#quick-view-modal-container" data-toggle="modal" title="Quick View" onclick="viewdata(<?php echo $row['id'] ?>)"><i class="fa fa-eye"></i></a>
+
+                                                                                </li>
                                                                                 <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
                                                                             </ul>
                                                                         </div>
@@ -126,37 +130,39 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                                     </div>
                                                                 </div>
                                                                 <!--  Single Grid product End -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-
+                                                                </div>
+                                       
+                                    
+                                 
+                                       <?php } ?>
                                     </div>
-                                </div>
-                            </div>
+                                 </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              </div>
+                           </div>
                         </div>
-
+                        </div>
                         <div class="row mb-30 mb-sm-40 mb-xs-30">
-                            <div class="col">
-                                <ul class="page-pagination">
-                                    <li class="active"><a href="#">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li><a href="#">03</a></li>
-                                    <li><a href="#">04</a></li>
-                                    <li><a href="#">05</a></li>
-                                    <li><a href="#">Next</a></li>
-                                </ul>
-                            </div>
+                           <div class="col">
+                              <ul class="page-pagination">
+                                 <li class="active"><a href="#">01</a></li>
+                                 <li><a href="#">02</a></li>
+                                 <li><a href="#">03</a></li>
+                                 <li><a href="#">04</a></li>
+                                 <li><a href="#">05</a></li>
+                                 <li><a href="#">Next</a></li>
+                              </ul>
+                           </div>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-    </div>
-</div>
-</div>
+         </div>
+      </div>
+      </div>
 <!-- Shop Section End -->
 <?php
 include('footer.php');
@@ -172,6 +178,35 @@ include('footer.php');
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/plugins/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    function viewdata(id) {
+        console.log('button has been clicked');
+        $.ajax({
+            url: "fetch.php",
+            method: 'POST',
+            data: {
+                'view': id
+            },
+            success: function(data) {
+                //  console.log('data was transfered');
+                var contenzzz = document.getElementById('quick-view-modal-container');
+                contenzzz.innerHTML = data;
+                // contenzzz.setAttribute("aria-hidden", "false");
+                // contenzzz.classList.add('show');
+                // contenzzz.style.display = 'block';
+            }
+        })
+    }
+
+    function closedata() {
+        var contenzzz = document.getElementById('quick-view-modal-container');
+        contenzzz.style.display = 'none';
+        contenzzz.classList.remove('show');
+        contenzzz.setAttribute("aria-hidden", "true");
+
+
+    }
+</script>
 </body>
 
 </html>

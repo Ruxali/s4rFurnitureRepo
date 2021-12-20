@@ -33,7 +33,7 @@
         }
     }
 
-  $sql = "select c.name as name, d.* FROM products D JOIN categories ON d.category_id = c.id ORDER BY d.name";
+  $sql = "SELECT c.name AS catname, d.* FROM products d JOIN categories c ON d.category_id = c.id ORDER BY d.name";
   $res = mysqli_query($connect,$sql);
 ?>
 <?php
@@ -86,7 +86,7 @@ include('adminfiles/head.php')
 
                   <td style="font-size: medium;"><?php echo $row['id'] ?></td>
                   <td style="font-size: medium;"><?php echo $row['name'] ?></td>
-                  <td style="font-size: medium;"><?php echo $row['name'] ?></td>
+                  <td style="font-size: medium;"><?php echo $row['catname'] ?></td>
                   <td style="font-size: medium;"><?php echo $row['price'] ?></td>
                   <td style="font-size: medium;"><?php echo $row['description'] ?></td>
                   <td style="font-size: medium;">
