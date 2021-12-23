@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2021 at 12:55 PM
+-- Generation Time: Dec 23, 2021 at 09:01 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -65,8 +65,28 @@ INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`, `st
 (2, 'Chair', '../uploads/61bc3dfa56d052.51932823.jpg', '2021-12-17 07:36:26', '2021-12-17 07:36:26', 1, ''),
 (3, 'Couch', '../uploads/61bae2fe0aa3e1.91137034.png', '2021-12-16 06:55:58', '2021-12-16 06:55:58', 1, ''),
 (4, 'Cupboard', '../uploads/61bae3129a2808.11368174.jpg', '2021-12-16 06:56:18', '2021-12-16 06:56:18', 1, ''),
-(5, 'Kitchen ', '../uploads/61bae3289d3075.55933036.png', '2021-12-16 06:56:40', '2021-12-16 06:56:40', 1, ''),
+(5, 'Kitchen', '../uploads/61bff9bae49ea2.92284364.png', '2021-12-16 06:56:40', '2021-12-16 06:56:40', 1, ''),
 (6, 'Table', '../uploads/61bae34032cb10.93526442.png', '2021-12-16 06:57:04', '2021-12-16 06:57:04', 1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `message`) VALUES
+(1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -89,11 +109,11 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `username`, `email`, `password`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'ruxalimaharjan@gmail.com', '', '12345', '2021-12-16 16:01:19', '2021-12-16 16:01:19', 0),
-(2, 'ruxalimaharjan@gmail.com', '', '$2y$10$7Jz5XgtVuqs6Q7ESoolQweR', '2021-12-16 16:52:52', '2021-12-16 16:52:52', 0),
-(3, '', 'ruxalimaharjan@gmail.com', '$2y$10$V/kIEVz9Ksakbnnqf12FheH', '2021-12-16 16:56:08', '2021-12-16 16:56:08', 0),
-(4, 'Ruxali', 'admin@gmail.com', '$2y$10$RLKDC8GHQ0Rwd2B6JbYFrek', '2021-12-16 17:00:38', '2021-12-16 17:00:38', 1),
-(5, 'admin', 'ruxali.maharjan@kathford.edu.np', '$2y$10$TZamydjJTBiwqyRfrbofEez', '2021-12-17 07:13:54', '2021-12-17 07:13:54', 0);
+(10, 'Ruxali', 'ruxalimaharjan@gmail.com', '$2y$10$KR3uYG7APbglRnaJ1vfDf.O', '2021-12-23 07:11:57', '2021-12-23 07:11:57', 0),
+(11, 'Ruxana', 'admin@gmail.com', '12345asdf', '2021-12-23 07:25:45', '2021-12-23 07:25:45', 1),
+(12, 'admin', 'admin1@gmail.com', 'd8f2481b859533616e48a72e0014b6', '2021-12-23 07:30:05', '2021-12-23 07:30:05', 1),
+(13, 'Ruxali', 'admini@gmail.com', '912ec803b2ce49e4a541068d495ab5', '2021-12-23 07:44:00', '2021-12-23 07:44:00', 1),
+(14, 'admini', 'adminiiii@gmail.com', '040b7cf4a55014e185813e0644502e', '2021-12-23 07:52:42', '2021-12-23 07:52:42', 1);
 
 -- --------------------------------------------------------
 
@@ -152,7 +172,12 @@ INSERT INTO `products` (`id`, `name`, `price`, `image1`, `image2`, `description`
 (1, 'King Size Bed ', 50000, '../uploads/61bd960ab9e0b_bed1a.jpg', '../uploads/61bd960abbcc8_bed1b.jpg', 'Size	King\r\nMaterial	Linen\r\nColor	Grey\r\nFurniture Finish	Metallic\r\nStyle	Contemporary', 1, '2021-12-18 08:04:26', '2021-12-18 08:04:26', 1),
 (2, 'Queen size bed', 3000, '../uploads/61bda139c6635_bed2a.jpg', '../uploads/61bda139d012b_bed2b.jpg', 'Size=	Queen\r\nMaterial=	Wood\r\nColor=	Burgundy\r\nProduct Dimensions=	84.3\"L x 65\"W x 40\"H', 1, '2021-12-18 08:52:09', '2021-12-18 08:52:09', 1),
 (3, 'Metal Platform Bed', 25000, '../uploads/61bdaece7acc5_bed3a.jpg', '../uploads/61bdaece7b457_bed3b.jpg', 'Size=	Queen,\r\nMaterial=	Wood, Alloy Steel,\r\nColor=	Black,\r\nStyle=	Standard', 1, '2021-12-18 09:50:06', '2021-12-18 09:50:06', 1),
-(4, 'Stairway Bunk Trundle Bed', 28000, '../uploads/61bdcf2f335ec_bed4a.jpg', '../uploads/61bdcf2f34341_bed4b.jpg', 'Size:	Twin over Full\r\nMaterial:	Wood\r\nColor:	Grey\r\nFurniture Finish:	Pine\r\nStyle:	Traditional', 1, '2021-12-18 12:08:15', '2021-12-18 12:08:15', 1);
+(4, 'Stairway Bunk Trundle Bed', 28000, '../uploads/61bdcf2f335ec_bed4a.jpg', '../uploads/61bdcf2f34341_bed4b.jpg', 'Size:	Twin over Full\r\nMaterial:	Wood\r\nColor:	Grey\r\nFurniture Finish:	Pine\r\nStyle:	Traditional', 1, '2021-12-18 12:08:15', '2021-12-18 12:08:15', 1),
+(5, 'Leather Executive Side Chair', 7000, '../uploads/61bff2cee882b_chair1a.jpg', '../uploads/61bff2cee990e_chair1b.jpg', 'Product Dimensions:	25.75\"D x 25\"W x 32.75\"H,\r\nRecommended Uses For Product:	Office,\r\nFurniture base movement:	Rock,\r\nRoom Type:	Office,\r\nColor:	Black', 2, '2021-12-20 03:04:46', '2021-12-20 03:04:46', 1),
+(6, 'Couch with wooden base and leg', 45000, '../uploads/61bff47b63ca3_couch1a.jpg', '../uploads/61bff47b66ceb_couch1b.jpg', 'Product Dimensions:	89.37\"D x 44.88\"W x 37.4\"H,\r\nColor:	Slate,\r\nMaterial	Hardwood frame: polyester/nylon,\r\nRoom Type: Living Room,\r\nSeating Capacity:	3,\r\nShape:	Square,\r\nArm Style:	Track,\r\nStyle:	Classic,\r\nFrame Material:	Wood', 3, '2021-12-20 03:11:55', '2021-12-20 03:11:55', 1),
+(7, 'Modern Freestanding Wardrobe', 35000, '../uploads/61bff646d086a_cupboard1.jpg', '../uploads/61bff646d1593_cupboard2.jpg', 'Product Dimensions:	82.48\"D x 22.76\"W x 81.3\"H\r\nBrand: Manhattan Comfort\r\nColor:	White\r\nMaterial:	Wood\r\nFinish Type:	White/Off-White', 4, '2021-12-20 03:19:34', '2021-12-20 03:19:34', 1),
+(8, 'Kitchen Counter', 50000, '../uploads/61bffe70ed5de_kitchen1.jpg', '../uploads/61bffe70ee363_kitchen2.jpg', 'Material:	Formica,\r\nColor:	Black,\r\nStyle:	Wood,\r\nItem Dimensions LxWxH:	393 x 15.75 x 0.01 inches', 5, '2021-12-20 03:54:24', '2021-12-20 03:54:24', 1),
+(9, 'Modern Office Desk', 12000, '../uploads/61c29ecc03f12_table1.jpg', '../uploads/61c29ecc04afe_table2.jpg', 'Desk design:	Computer Desk,\r\nProduct Dimensions:	17.72\"D x 53.54\"W x 30.32\"H,\r\nColor:	White,\r\nRoom Type:	Office,\r\nShape:	Rectangular,\r\nStyle:	Modern,\r\nFinish Type:	Polyester,,\r\nTop Material Type:	Wood\r\nNumber of Drawers: 3	', 6, '2021-12-22 03:43:08', '2021-12-22 03:43:08', 1);
 
 --
 -- Indexes for dumped tables
@@ -168,6 +193,12 @@ ALTER TABLE `admins`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -211,10 +242,16 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -232,7 +269,7 @@ ALTER TABLE `order_details`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

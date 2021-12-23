@@ -4,8 +4,8 @@ session_start();
 include('connect.php');
 $username=$_POST['username'];
 $email=$_POST['email'];
-$password=$_POST['password'];
-$password2=$_POST['password2'];
+$password=md5($_POST['password']);
+$password2=md5($_POST['password2']);
 
 if ($password==$password2) {
     if((strlen($password) >= 8)){
@@ -16,8 +16,8 @@ if ($password==$password2) {
             window.location.href='login-register.php';
             </script>";
         }else{
-        $enpass=$encpass = password_hash($password, PASSWORD_BCRYPT);
-	$sql="INSERT INTO customers(username, email, password) VALUES('$username','$email','$enpass')";
+        
+	$sql="INSERT INTO customers(username, email, password) VALUES('$username','$email','$password')";
 	$connect->query($sql);
 	echo "<script> alert('Registration successful');
 	window.location.href='login-register.php';
