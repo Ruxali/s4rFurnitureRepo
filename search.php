@@ -1,5 +1,6 @@
 <?php
 include('header.php');
+include('functions.php');
 ?>
 <?php
 require('connect.php');
@@ -22,7 +23,8 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                     <h2>Shop</h2>
                     <ul class="page-breadcrumb">
                                 <li><a href="index.php">Home</a></li>
-                                <li>Shop</li>
+                                <li><a href="shop.php">Shop</a></li>
+                                <li>Search Results</li>
                             </ul>
                 </div>
 
@@ -37,47 +39,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
         <div class="row">
             <div class="col-12">
                 <div class="shop-area">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Grid & List View Start -->
-                            <div class="shop-topbar-wrapper d-flex justify-content-between align-items-center">
-                                <div class="grid-list-option d-flex">
-                                    <ul class="nav">
-                                        <li>
-                                            <a class="active show" data-toggle="tab" href="#grid"><i class="fa fa-th"></i></a>
-                                        </li>
-
-                                        <li>
-                                            <!--Categories Area Start-->
-                                            <div class="categories pt-20 mt-20">
-                                                <?php
-                                                foreach ($cat_arr as $row) {
-                                                ?>
-                                                    <div class="circle1">
-                                             
-                                                    <a href="catview.php?catid=<?php echo $row['id'];?>">
-                                                            <img class="image" style="border-radius: 50%; margin-right: 40px;border: 2px solid#000;  padding:2px ;width:75px!important;height:75px!important; object-fit: contain;" src="upload/<?php echo $row['image'] ?>" alt="Image">
-                                                            <br>
-
-                                                            </a></div>
-                                                <?php
-                                                }
-                                                ?>
-
-
-                                            </div>
-                                            <!--Categories Area End-->
-                                        </li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                            <!-- Grid & List View End -->
-                        </div>
-                    </div>
-
-
+                    
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="row">
@@ -89,35 +51,18 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                 <div class="product-grid-view">
                                                     <div class="row">
                                                         <?php
+                                                    
 
-                                                        include("connect.php");
-                                                        $per_page=8;
-                                                        $start = 0;
-                                                        $current_page=1;
-                                                        if(isset($_GET['start'])){
-                                                            $start= $_GET['start'];
-                                                            $current_page = $start;
-                                                            $start --;
-                                                            $start = $start*$per_page;
+                                                    include("connect.php");
+                                                        $search=search($connect);
+                                                        if(sizeof($search)== 0)
+                                                        {
+                                                             
+                                                            echo '<img src="gallery/productError.png"class="rounded mx-auto d-block">';
                                                         }
-                                                        $record = mysqli_num_rows(mysqli_query($connect, "SELECT * FROM products"));
-                                                        $pagi = ceil($record/$per_page);
-
-                                                        $sql = "SELECT * FROM products LIMIT $start,$per_page";
-                                                        $results = $connect->query($sql);
-                                                        
-                                                     
-                                                        $productdata = [];
-                                                        if ($results->num_rows > 0) {
-                                                            while ($row_product = $results->fetch_assoc()) {
-                                                                array_push($productdata, $row_product);
-                                                            }
-                                                        }else{
-                                                            echo "No records";
-                                                        }
-                                                        
-                                                        
-                                                        foreach ($productdata as $key => $row) {
+                                                        else{
+                                            
+                                                        foreach($search as $row){
                                                         ?>
                                                             <div class="col-lg-3 col-md-6 col-sm-6">
                                                                 <!--  Single Grid product Start -->
@@ -136,7 +81,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                                             <ul>
                                                                                 <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
                                                                                 <li>
-                                                                                <a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a>
+                                                                                <a href="#quick-view-modal-container" data-toggle="modal" title="Quick View" onclick="viewdata(<?php echo $row['id'] ?>)"><i class="fa fa-eye"></i></a>
 
                                                                                 </li>
                                                                                 <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
@@ -153,7 +98,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                        
                                     
                                  
-                                       <?php } ?>
+                                        <?php } } ?>
                                     </div>
                                  </div>
                                     </div>
@@ -163,21 +108,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                            </div>
                         </div>
                         </div>
-                        <div class="row mb-30 mb-sm-40 mb-xs-30">
-                           <div class="col">
-                              <ul class="page-pagination">
-                                  <?php                                
-                                  for($i=1; $i<=$pagi; $i++){
-                                    $class=''; 
-                                      if($current_page == $i){
-                                          $class='active';
-                                      }
-                                      ?>
-                                 <li class="<?php echo $class?>"><a href="?start=<?php echo $i?>"><?php echo $i?></a></li>
-                                 <?php } ?>
-                              </ul>
-                           </div>
-                        </div>
+                        
                      </div>
                   </div>
                </div>
@@ -200,7 +131,35 @@ include('footer.php');
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/plugins/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    function viewdata(id) {
+        console.log('button has been clicked');
+        $.ajax({
+            url: "fetch.php",
+            method: 'POST',
+            data: {
+                'view': id
+            },
+            success: function(data) {
+                //  console.log('data was transfered');
+                var contenzzz = document.getElementById('quick-view-modal-container');
+                contenzzz.innerHTML = data;
+                // contenzzz.setAttribute("aria-hidden", "false");
+                // contenzzz.classList.add('show');
+                // contenzzz.style.display = 'block';
+            }
+        })
+    }
 
+    function closedata() {
+        var contenzzz = document.getElementById('quick-view-modal-container');
+        contenzzz.style.display = 'none';
+        contenzzz.classList.remove('show');
+        contenzzz.setAttribute("aria-hidden", "true");
+
+
+    }
+</script>
 </body>
 
 </html>

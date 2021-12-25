@@ -11,6 +11,10 @@ require('header.php');
 
                 <div class="page-banner text-left">
                     <h2>Single Product</h2>
+                    <ul class="page-breadcrumb">
+                                <li><a href="index.php">Home</a></li>
+                                <li>Single Product Details</li>
+                            </ul>
                 </div>
 
             </div>
@@ -279,12 +283,9 @@ require('header.php');
 
                             <div class="product-action">
                                 <ul>
-                                    <li><a href="cart.html"><i class="fa fa-cart-plus"></i></a></li>
-                                    <li>
-                                        <a href="#quick-view-modal-container" data-toggle="modal" title="Quick View" onclick="viewdata(<?php echo $row['id'] ?>)"><i class="fa fa-eye"></i></a>
-
-                                    </li>
-                                    <li><a href="wishlit.html"><i class="fa fa-heart-o"></i></a></li>
+                                    <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                    <li><a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -319,35 +320,6 @@ require('footer.php');
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/plugins/plugins.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-    function viewdata(id) {
-        console.log('button has been clicked');
-        $.ajax({
-            url: "fetch.php",
-            method: 'POST',
-            data: {
-                'view': id
-            },
-            success: function(data) {
-                //  console.log('data was transfered');
-                var contenzzz = document.getElementById('quick-view-modal-container');
-                contenzzz.innerHTML = data;
-                // contenzzz.setAttribute("aria-hidden", "false");
-                // contenzzz.classList.add('show');
-                // contenzzz.style.display = 'block';
-            }
-        })
-    }
-
-    function closedata() {
-        var contenzzz = document.getElementById('quick-view-modal-container');
-        contenzzz.style.display = 'none';
-        contenzzz.classList.remove('show');
-        contenzzz.setAttribute("aria-hidden", "true");
-
-
-    }
-</script>
 
 </body>
 

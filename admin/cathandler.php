@@ -113,5 +113,3 @@ if (isset($_POST['updatecat'])) {
 
 }
 ?>
-
-`image2`,`image3`,`image4`, '$image_url', '$image_urlb', '$imageurlc',

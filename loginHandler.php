@@ -4,7 +4,7 @@ include('connect.php');
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
 
     $sql="SELECT * from customers Where username='$username' AND password='$password'";
   $results=$connect->query($sql);

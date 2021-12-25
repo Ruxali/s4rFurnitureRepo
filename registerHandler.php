@@ -4,8 +4,8 @@ session_start();
 include('connect.php');
 $username=$_POST['username'];
 $email=$_POST['email'];
-$password=md5($_POST['password']);
-$password2=md5($_POST['password2']);
+$password=$_POST['password'];
+$password2=$_POST['password2'];
 
 if ($password==$password2) {
     if((strlen($password) >= 8)){

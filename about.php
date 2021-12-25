@@ -4,7 +4,7 @@ include('header.php');
 
 
 <!-- Page Banner Section Start -->
-<div class="page-banner-section section bg-image" data-bg="assets/images/bg/breadcrumb.png">
+<div class="page-banner-section section bg-image" data-bg="gallery/shopBanner.png">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -30,7 +30,7 @@ include('header.php');
                 <!--About Us Image Start-->
                 <div class="about-us-img-wrapper mb-30 mb-xs-15">
                     <div class="about-us-image img-full">
-                        <a href="#"><img src="./assets/images/blog/blog-6.jpg" alt=""></a>
+                        <a href="#"><img src="gallery/about.jpg" alt=""></a>
                     </div>
                 </div>
                 <!--About Us Image End-->
@@ -38,10 +38,10 @@ include('header.php');
             <div class="col-lg-6 col-12">
                 <!--About Us Content Start-->
                 <div class="about-us-content pl-30 pl-md-0 pl-sm-0 pl-xs-0">
-                    <span>Since 2019</span>
+                    <span>Since 1985</span>
                     <h2>Provide Best Quality Furnitures for Our Cleint</h2>
-                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam ?</p>
-                    <p>consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam</p>
+                    <p>We have been providing best quality furnitures to our customers since 1985.</p>
+                    <p>Ordering from us has just become very easy since this website. We hereby try to provide best quality furnitures till forever like we always have.</p>
                 </div>
                 <!--About Us Content End-->
             </div>
@@ -49,86 +49,6 @@ include('header.php');
     </div>
 </div>
 <!--About Us Area End-->
-
-
-<!-- Banner section start -->
-<div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- Single Banner Start -->
-                <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 bg-image" data-bg="./assets/images/banner/banner3.jpg">
-                    <div class="sp-banner-content">
-                        <span class="normat-text">DISCOUNTED UP TO 50%</span>
-                        <h2 class="title">Zigzag King Chair</h2>
-                        <span class="normat-text">LIMITED TIME OFEER</span>
-                        <div class="countdown-area">
-                            <div class="product-countdown" data-countdown="2019/06/01"></div>
-                        </div>
-                        <a href="shop.php">SHOP NOW</a>
-                    </div>
-                </div>
-                <!-- Single Banner End -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Banner section End -->
-
-
-
-
-<!--Features section start-->
-<div class="features-section section pt-30 pt-lg-15 pt-md-0 pt-sm-0 pt-xs-15">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-4 col-md-6">
-                <!-- Single Feature Start -->
-                <div class="single-feature mb-30">
-                    <div class="feature-image">
-                        <img src="./assets/images/icons/feature-1.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="feature-content">
-                        <h4 class="title">Free home delivery</h4>
-                        <p class="short-desc">Provide free home delivery for the all product over $100 </p>
-                    </div>
-                </div>
-                <!-- Single Feature End -->
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <!-- Single Feature Start -->
-                <div class="single-feature mb-30">
-                    <div class="feature-image">
-                        <img src="./assets/images/icons/feature-2.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="feature-content">
-                        <h4 class="title">Quality Products</h4>
-                        <p class="short-desc">We ensure the product quality that is our main goal </p>
-                    </div>
-                </div>
-                <!-- Single Feature End -->
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <!-- Single Feature Start -->
-                <div class="single-feature mb-30">
-                    <div class="feature-image">
-                        <img src="./assets/images/icons/feature-3.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="feature-content">
-                        <h4 class="title">3 Days Return</h4>
-                        <p class="short-desc">Provide free home delivery for the all product over $100 </p>
-                    </div>
-                </div>
-                <!-- Single Feature End -->
-            </div>
-
-        </div>
-    </div>
-</div>
-<!--Features section end-->
-
-
 
 <!--About Us Team Start-->
 <div class="about-us-team-area section pt-65 pt-lg-45 pt-md-35 pt-sm-20 pt-xs-15 pb-70 pb-lg-50 pb-md-40 pb-sm-30 pb-xs-20">
@@ -145,7 +65,7 @@ include('header.php');
                 <!--Single Team Start-->
                 <div class="single-team mb-30">
                     <div class="team-image img-full">
-                        <a href="#"><img src="./assets/images/team/team-1.jpg" alt=""></a>
+                        <a href="#"><img src="gallery/teams/team-1.jpg" alt=""></a>
                     </div>
                     <div class="team-content">
                         <div class="team-hover-info">
@@ -165,11 +85,11 @@ include('header.php');
                 <!--Single Team Start-->
                 <div class="single-team mb-30">
                     <div class="team-image img-full">
-                        <a href="#"><img src="./assets/images/team/team-2.jpg" alt=""></a>
+                        <a href="#"><img src="gallery/teams/team-2.jpg" alt=""></a>
                     </div>
                     <div class="team-content">
                         <div class="team-hover-info">
-                            <h2><a href="#">Isaac Newton</a></h2>
+                            <h2><a href="#">Iserai Newton</a></h2>
                             <ul class="team-social">
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -185,7 +105,7 @@ include('header.php');
                 <!--Single Team Start-->
                 <div class="single-team mb-30">
                     <div class="team-image img-full">
-                        <a href="#"><img src="./assets/images/team/team-3.jpg" alt=""></a>
+                        <a href="#"><img src="gallery/teams/team-3.jpg" alt=""></a>
                     </div>
                     <div class="team-content">
                         <div class="team-hover-info">
@@ -207,9 +127,102 @@ include('header.php');
 <!--About Us Team End-->
 
 
-<!-- Testimonial Area Start -->
-<div class="testimonial-section section pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+<!--Features section start-->
+<div class="features-section section pt-30 pt-lg-15 pt-md-0 pt-sm-0 pt-xs-15">
     <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section-title text-center mb-15">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <!-- Single Feature Start -->
+                <div class="single-feature mb-30">
+                    <div class="feature-image">
+                        <img src="./assets/images/icons/feature-1.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Free home delivery</h4>
+                        <p class="short-desc">We provide free home delivery for the all products over purchase of Rs.25,000.</p>
+                    </div>
+                </div>
+                <!-- Single Feature End -->
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <!-- Single Feature Start -->
+                <div class="single-feature mb-30">
+                    <div class="feature-image">
+                        <img src="./assets/images/icons/feature-2.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Quality Products</h4>
+                        <p class="short-desc">We ensure the best product quality. Our main goal is to provide with modern and quality furniture. </p>
+                    </div>
+                </div>
+                <!-- Single Feature End -->
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <!-- Single Feature Start -->
+                <div class="single-feature mb-30">
+                    <div class="feature-image">
+                        <img src="./assets/images/icons/feature-3.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">3 Days Return</h4>
+                        <p class="short-desc">Products can be returned within 3 days of shipping date incase of damage.</p>
+                    </div>
+                </div>
+                <!-- Single Feature End -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--Features section end-->
+
+
+
+<!-- Banner section start -->
+<div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Single Banner Start -->
+                <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 " style="background-image: url('./gallery/frontpage.jpg')">
+                    <div class="sp-banner-content">
+                        <span class="normat-text">UNIQUE DESIGN FURNITURE</span>
+                        <h2 class="title">Zigzag King Chair</h2>
+                        <span class="normat-text">GRAB YOURS FIRST!!!</span>
+                        <a href="shop.php">SHOP NOW</a>
+                    </div>
+                </div>
+                <!-- Single Banner End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner section End -->
+
+
+
+<!-- Testimonial Area Start -->
+
+<div class="testimonial-section section pb-80 pb-lg-60 pb-md-50 pb-sm-40 pb-xs-40">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col">
+                <div class="section-title text-center mb-15">
+                    <h2>Testimonials</h2>
+                </div>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col-12">
                 <div class="testimonial-wrap bg-gray-two pt-45 pb-30">
@@ -238,7 +251,11 @@ include('header.php');
                                                         </div>
                                                         <div class="testimonial-description">
                                                             <blockquote class="testimonials-text">
-                                                                <p>“I am very much happy to buy product from nelson, the provide the best quality of product. Product quality is very satisfactory. Also the creative design of their Furniture make me happy.”</p>
+                                                                <p>“I am very much happy to buy product from
+                                                                    nelson, the provide the best quality of
+                                                                    product. Product quality is very
+                                                                    satisfactory. Also the creative design of
+                                                                    their Furniture make me happy.”</p>
                                                             </blockquote>
                                                         </div>
                                                     </div>
@@ -267,7 +284,11 @@ include('header.php');
                                                         </div>
                                                         <div class="testimonial-description">
                                                             <blockquote class="testimonials-text">
-                                                                <p>“I am very much happy to buy product from nelson, the provide the best quality of product. Product quality is very satisfactory. Also the creative design of their Furniture make me happy.”</p>
+                                                                <p>“I am very much happy to buy product from
+                                                                    nelson, the provide the best quality of
+                                                                    product. Product quality is very
+                                                                    satisfactory. Also the creative design of
+                                                                    their Furniture make me happy.”</p>
                                                             </blockquote>
                                                         </div>
                                                     </div>
@@ -285,6 +306,7 @@ include('header.php');
     </div>
 </div>
 <!-- Testimonial Area End -->
+
 
 <?php
 include('footer.php');

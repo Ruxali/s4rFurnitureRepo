@@ -54,12 +54,18 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                 foreach ($cat_arr as $row) {
                                                 ?>
                                                     <div class="circle1">
-                                             
-                                                    <a href="catview.php?catid=<?php echo $row['id'];?>">
+
+                                                        <a href="catview.php?catid=<?php echo $row['id']; ?>">
                                                             <img class="image" style="border-radius: 50%; margin-right: 40px;border: 2px solid#000;  padding:2px ;width:75px!important;height:75px!important; object-fit: contain;" src="upload/<?php echo $row['image'] ?>" alt="Image">
                                                             <br>
 
-                                                            </a></div>
+                                                        </a>
+                                                    </div>
+
+
+                                                    <?php
+
+                                                    ?>
                                                 <?php
                                                 }
                                                 ?>
@@ -91,6 +97,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                         <?php
 
                                                         include("connect.php");
+                                                        $id = $_GET['catid'];
                                                         $per_page=8;
                                                         $start = 0;
                                                         $current_page=1;
@@ -100,30 +107,20 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                             $start --;
                                                             $start = $start*$per_page;
                                                         }
-                                                        $record = mysqli_num_rows(mysqli_query($connect, "SELECT * FROM products"));
+                                                        $record = mysqli_num_rows(mysqli_query($connect, "SELECT * FROM products WHERE category_id-'$id'"));
                                                         $pagi = ceil($record/$per_page);
 
-                                                        $sql = "SELECT * FROM products LIMIT $start,$per_page";
+                                                      
+                                                        $sql = "SELECT * FROM products WHERE category_id='$id' LIMIT $start,$per_page";
                                                         $results = $connect->query($sql);
-                                                        
-                                                     
-                                                        $productdata = [];
-                                                        if ($results->num_rows > 0) {
-                                                            while ($row_product = $results->fetch_assoc()) {
-                                                                array_push($productdata, $row_product);
-                                                            }
-                                                        }else{
-                                                            echo "No records";
-                                                        }
-                                                        
-                                                        
-                                                        foreach ($productdata as $key => $row) {
+                                                        while ($row = $results->fetch_assoc()) {
+
                                                         ?>
                                                             <div class="col-lg-3 col-md-6 col-sm-6">
                                                                 <!--  Single Grid product Start -->
                                                                 <div class="single-grid-product mb-40">
                                                                     <div class="product-image">
-                                                                       <a href="single-product.php?id=<?php echo $row['id']; ?>">
+                                                                        <a href="single-product.php?id=<?php echo $row['id']; ?>">
                                                                             <img style="height: 270px!important;width: 290px!important; " src="<?php $path = $row['image1'];
                                                                                                                                                 $display = substr($path, 3);
                                                                                                                                                 echo $display; ?>" class="img-fluid" alt="">
@@ -136,7 +133,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                                             <ul>
                                                                                 <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
                                                                                 <li>
-                                                                                <a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a>
+                                                                                    <a href="#quick-view-modal-container" data-toggle="modal" title="Quick View" onclick="viewdata(<?php echo $row['id'] ?>)"><i class="fa fa-eye"></i></a>
 
                                                                                 </li>
                                                                                 <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
@@ -149,24 +146,25 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                                     </div>
                                                                 </div>
                                                                 <!--  Single Grid product End -->
-                                                                </div>
-                                       
-                                    
-                                 
-                                       <?php } ?>
+                                                            </div>
+
+
+
+                                                        <?php } ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                 </div>
-                                    </div>
-                                 </div>
-                              </div>
-                              </div>
-                           </div>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                        <div class="row mb-30 mb-sm-40 mb-xs-30">
-                           <div class="col">
-                              <ul class="page-pagination">
-                                  <?php                                
+                    </div>
+                    <div class="row mb-30 mb-sm-40 mb-xs-30">
+                        <div class="col">
+                            <ul class="page-pagination">
+                                  <?php 
+
                                   for($i=1; $i<=$pagi; $i++){
                                     $class=''; 
                                       if($current_page == $i){
@@ -176,15 +174,15 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                  <li class="<?php echo $class?>"><a href="?start=<?php echo $i?>"><?php echo $i?></a></li>
                                  <?php } ?>
                               </ul>
-                           </div>
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 <!-- Shop Section End -->
 <?php
 include('footer.php');
@@ -200,7 +198,35 @@ include('footer.php');
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/plugins/plugins.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    function viewdata(id) {
+        console.log('button has been clicked');
+        $.ajax({
+            url: "fetch.php",
+            method: 'POST',
+            data: {
+                'view': id
+            },
+            success: function(data) {
+                //  console.log('data was transfered');
+                var contenzzz = document.getElementById('quick-view-modal-container');
+                contenzzz.innerHTML = data;
+                // contenzzz.setAttribute("aria-hidden", "false");
+                // contenzzz.classList.add('show');
+                // contenzzz.style.display = 'block';
+            }
+        })
+    }
 
+    function closedata() {
+        var contenzzz = document.getElementById('quick-view-modal-container');
+        contenzzz.style.display = 'none';
+        contenzzz.classList.remove('show');
+        contenzzz.setAttribute("aria-hidden", "true");
+
+
+    }
+</script>
 </body>
 
 </html>

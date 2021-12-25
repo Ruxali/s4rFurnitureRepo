@@ -33,7 +33,7 @@
         }
     }
 
-  $sql = "SELECT c.name AS catname, d.* FROM products d JOIN categories c ON d.category_id = c.id ORDER BY d.name";
+  $sql = "SELECT c.name AS catname, d.* FROM products d JOIN categories c ON d.category_id = c.id ORDER BY d.id";
   $res = mysqli_query($connect,$sql);
 ?>
 <?php

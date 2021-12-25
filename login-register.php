@@ -38,11 +38,11 @@ include('header.php');
                         <form action="loginHandler.php" method="POST">
                             <div class="form-fild">
                                 <p><label>Username <span class="required">*</span></label></p>
-                                <input name="username" value="" type="text">
+                                <input name="username" value="" type="text" required >
                             </div>
                             <div class="form-fild">
                                 <p><label>Password <span class="required">*</span></label></p>
-                                <input name="password" value="" type="password">
+                                <input name="password" value="" type="password" required>
                             </div>
                             <div class="login-submit">
                                 <button type="submit" name="login" class="btn">Login</button>
@@ -64,18 +64,18 @@ include('header.php');
                             <div class="form-fild">
                                 <div class="form-fild">
                                     <p><label>Username <span class="required">*</span></label></p>
-                                    <input name="username" value="" type="text">
+                                    <input name="username" value="" type="text" required>
                                 </div>
                                 <p><label>Email Address <span class="required">*</span></label></p>
-                                <input name="email" value="" type="email">
+                                <input name="email" value="" type="email" required>
                             </div>
                             <div class="form-fild">
                                 <p><label>Password <span class="required">*</span></label></p>
-                                <input name="password" value="" type="password">
+                                <input name="password" value="" type="password"required>
                             </div>
                             <div class="form-fild">
                                 <p><label>Retype Password <span class="required">*</span></label></p>
-                                <input name="password2" value="" type="password">
+                                <input name="password2" value="" type="password" required>
                             </div>
                             <div class="register-submit">
                                 <button type="submit" name="register" class="btn">Register</button>

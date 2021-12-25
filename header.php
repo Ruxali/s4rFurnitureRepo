@@ -27,6 +27,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/13830254b4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,7 +46,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                             </div>
                             <!--Logo Area End-->
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-4 d-none d-lg-block col-12">
+                        <div class="col-xl-6 col-lg-6 col-md-4 d-none d-lg-block col-12 col-12">
                             <!--Header Menu Area Start-->
                             <div class="header-menu-area text-center">
                                 <nav class="main-menu">
@@ -55,11 +56,11 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                         <li><a href="shop.php">Categories</a>
                                             <ul class="sub-menu">
                                                 <?php
-                                                foreach ($cat_arr as $list) {
+                                                foreach ($cat_arr as $row) {
                                                 ?>
-                                                    <li class="dropdown-item text-left"><span OnClick="parent.location='<?php print $list['fileurl'] ?>'" class="nav-item text-left text-black">
+                                                    <li class="dropdown-item text-left" class="nav-item text-left text-black"><a href="catview.php?catid=<?php echo $row['id']; ?>">
                                                             <?php
-                                                            echo $list['name'] ?></span></li>
+                                                            echo $row['name'] ?></a></li>
                                                 <?php
                                                 }
                                                 ?>
@@ -69,15 +70,34 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
                                             <ul class="sub-menu">
                                                 <li><a href="about.php">About</a></li>
-                                                <li><a href="compare.php">Compare</a></li>
                                                 <li><a href="cart.php">Shopping Cart</a></li>
                                                 <li><a href="checkout.php">Checkout</a></li>
                                                 <li><a href="wishlist.php">Wishlist</a></li>
                                                 <li><a href="my-account.php">My Account</a></li>
-                                                <li><a href="login-register.php">Login Register</a></li>
+                                                <li>
+                                                    <?php
+                                                    include('connect.php');
+                                                    if (!empty($_SESSION['username'])) { ?>
+                                                        <a href="logout.php">Logout</a>
+                                                    <?php } else { ?>
+                                                        <a href="login-register.php">Login/Register</a>
+                                                    <?php } ?>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li><a href="contact.php">Contact</a></li>
+                                        <li>
+                                            <div style="padding: 35px 0px 40px 0px;">
+                                                <form method="post" action="search.php">
+                                                    <div style="display: flex;">
+                                                        <input type="search" class="search-data" placeholder="Search" name="s" required>
+                                                        <button type="submit" id="search">
+                                                            <i class="fa fa-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -86,8 +106,9 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                         <div class="col-xl-3 col-lg-4 col-md-5 col-12">
                             <!--Header Search And Mini Cart Area Start-->
                             <div class="header-search-cart-area">
+
                                 <ul>
-                                    <li><a class="header-search-toggle" href="#"><i class="flaticon-magnifying-glass"></i></a></li>
+
                                     <li class="currency-menu"><a href="#"><i class="flaticon-user"></i></a>
                                         <!--Crunccy dropdown-->
                                         <ul class="currency-dropdown">
@@ -95,7 +116,11 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                             <!--Account Currency Start-->
                                             <li><a href="my-account.php">My account</a>
                                                 <ul>
-                                                    <li><a href="login-register.php">Login</a></li>
+                                                    <li><?php if (isset($_SESSION['username'])) {
+                                                            echo '<a href="logout.php">Logout</a>';
+                                                        } else {
+                                                            echo '<a href="login-register.php">Login/Register</a>';
+                                                        } ?></li>
                                                     <li><a href="checkout.php">Checkout</a></li>
                                                     <li><a href="my-account.php">My account</a></li>
                                                     <li><a href="cart.php">Cart</a></li>
@@ -107,7 +132,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                         <!--Crunccy dropdown-->
                                     </li>
                                     <li class="mini-cart"><a href="cart.php"><i class="flaticon-shopping-cart"></i></a>
-                                        
+
                                     </li>
                                 </ul>
                             </div>
@@ -178,9 +203,13 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
                 <div class="offcanvas-inner-content">
                     <div class="offcanvas-mobile-search-area">
-                        <form action="#">
-                            <input type="search" placeholder="Search ...">
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                        <form method="post" action="search.php">
+
+                            <input type="search" class="search-data" placeholder="Search" name="s" required>
+                            <button type="submit" id="search">
+                                <i class="fa fa-search"></i>
+                            </button>
+
                         </form>
                     </div>
                     <nav class="offcanvas-navigation">
@@ -189,26 +218,29 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                             <li class="menu-item-has-children"><a href="shop.php">Shop</a></li>
                             <li class="menu-item-has-children"><a href="#">Categories</a>
                                 <ul class="submenu2">
-                                <?php
-                                                foreach ($cat_arr as $list) {
-                                                ?>
-                                                    <li class="dropdown-item text-left"><span OnClick="parent.location='<?php print $list['fileurl'] ?>'" class="nav-item text-left text-black">
-                                                            <?php
-                                                            echo $list['name'] ?></span></li>
+                                    <?php
+                                    foreach ($cat_arr as $row) {
+                                    ?>
+                                        <li class="dropdown-item text-left" class="nav-item text-left text-black"><a href="catview.php?catid=<?php echo $row['id']; ?>">
                                                 <?php
-                                                }
-                                                ?>
+                                                echo $row['name'] ?></a></li>
+                                    <?php
+                                    }
+                                    ?>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="#">Pages</a>
                                 <ul class="submenu2">
                                     <li><a href="about.php">About</a></li>
-                                    <li><a href="compare.php">Compare</a></li>
                                     <li><a href="cart.php">Shopping Cart</a></li>
                                     <li><a href="checkout.php">Checkout</a></li>
                                     <li><a href="wishlist.php">Wishlist</a></li>
                                     <li><a href="my-account.php">My Account</a></li>
-                                    <li><a href="login-register.php">Login Register</a></li>
+                                    <li><?php if (isset($_SESSION['username'])) {
+                                            echo '<a href="logout.php">Logout</a>';
+                                        } else {
+                                            echo '<a href="login-register.php">Login/Register</a>';
+                                        } ?></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children"><a href="contact.php">Contact</a>
@@ -222,7 +254,11 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                             <ul>
                                 <li class="menu-item-has-children"><a href="#">MY ACCOUNT </a>
                                     <ul class="submenu2">
-                                        <li><a href="login-register.php">Login</a></li>
+                                        <li><?php if (isset($_SESSION['username'])) {
+                                                echo '<a href="logout.php">Logout</a>';
+                                            } else {
+                                                echo '<a href="login-register.php">Login/Register</a>';
+                                            } ?></li>
                                         <li><a href="checkout.php">Checkout</a></li>
                                         <li><a href="my-account.php">My account</a></li>
                                         <li><a href="cart.php">Cart</a></li>
@@ -258,22 +294,3 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
         </div>
         <!-- Offcanvas Menu End -->
-
-        <!-- main-search start -->
-        <div class="main-search-active">
-            <div class="sidebar-search-icon">
-                <button class="search-close"><i class="fa fa-times"></i></button>
-            </div>
-            <div class="sidebar-search-input">
-                <form action="#">
-                    <div class="form-search">
-                        <input id="search" class="input-text" value="" placeholder="" type="search">
-                        <button>
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-                <p class="form-description">Hit enter to search or ESC to close</p>
-            </div>
-        </div>
-        <!-- main-search end -->

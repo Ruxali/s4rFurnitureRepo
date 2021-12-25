@@ -26,7 +26,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         
         <li>
-          <a href="adminindex.php">
+          <a href="index.php">
             <i class="fa fa-th"></i> <span>HOME</span>
           </a>
         </li>
