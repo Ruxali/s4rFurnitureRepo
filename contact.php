@@ -1,24 +1,6 @@
 <?php
 include('header.php');
 ?>
-<?php
-if (isset($_POST['save'])) {
-    include('connect.php');
-
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
-
-    $sql = "INSERT INTO contact(name, email, message) VALUES('$name','$email','$message')";
-    if ($connect->query($sql)) {
-        echo "Saved";
-    } else {
-        echo "unsaved";
-    }
-}
-?>
-
-
 
 
 <!-- Page Banner Section Start -->
@@ -48,7 +30,7 @@ if (isset($_POST['save'])) {
             <div class="col-12">
                 <div class="contact-form-wrap">
                     <h3 class="contact-title">Write Us</h3>
-                    <form id="contact-form" action="contact.php" method="POST"enctype="multipart/form-data">
+                    <form id="contact-form" action="contactHandler.php" method="POST">
                         <div class="row">
                             <div class="col-lg-5">
                                 <div class="name-fild-padding mb-sm-30 mb-xs-30">
@@ -56,13 +38,13 @@ if (isset($_POST['save'])) {
                                         <div class="col-md-12">
                                             <div class="contact-form-style mb-20">
                                                 <label class="fild-name">Name</label>
-                                                <input name="name" placeholder="" type="text">
+                                                <input name="name" placeholder="Your Name..." type="text">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="contact-form-style mb-20">
                                                 <label class="fild-name">Email</label>
-                                                <input name="email" placeholder="" type="email">
+                                                <input name="email" placeholder="Your Email..." type="email">
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +54,9 @@ if (isset($_POST['save'])) {
                                 <div class="contact-form-style bl">
                                     <label class="fild-name pl-15">Message</label>
                                     <textarea class="pl-15" name="message" placeholder="Type your message here.."></textarea>
-                                    <button class="btn" name = "save" type="submit"><span>Send message</span></button>
+                                    
+                                <button type="submit" name="submit" class="btn">Send Message</button>
+                            
                                 </div>
                             </div>
                         </div>
