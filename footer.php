@@ -42,8 +42,8 @@
                         <!--Footer Widget start-->
                         <div class="footer-widget text-lg-right text-left col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-40 mb-xs-35">
                             <h2>Sunakothi,Lalitpur</h2>
-                            <p class="contact-text">hello@hasthemes.com</p>
-                            <p class="contact-text">+0123456789</p>
+                            <p class="contact-text"><i class="ion-android-phone-portrait"></i> <a href="tel:+97701-5570154">+977 01-5570154</a></p>
+                            <p class="contact-text"><i class="ion-android-mail"></i> <a href="mailto:s4rfurniture@gmail.com">s4rfurniture@gmail.com</a></p>
                         </div>
                         <!--Footer Widget end-->
                     </div>

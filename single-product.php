@@ -108,18 +108,12 @@ require('header.php');
 
                                 <div class="single-product-quantity">
                                     <form class="add-quantity" action="#">
-                                        <div class="product-quantity">
-                                            <input value="1" type="number">
-                                        </div>
                                         <div class="add-to-link">
-                                            <button class="btn"><i class="fa fa-shopping-bag"></i>add to cart</button>
+                                            <button class="btn" onclick="location.href='carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>'"><i class="fa fa-shopping-bag"></i>add to cart</button>
                                         </div>
                                     </form>
                                 </div>
-                                <div class="wishlist-compare-btn">
-                                    <a href="#" class="wishlist-btn">Add to Wishlist</a>
-
-                                </div>
+                                
                                 <div class="product-meta">
                                     <span class="posted-in">
                                         Category:
@@ -137,23 +131,7 @@ require('header.php');
                                         <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>
-                            <!--Product Details Content End-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Single Product Section End -->
-
-<!--Product Description Review Section Start-->
-<div class="product-description-review-section section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-review-tab section">
+                                <div class="product-review-tab section">
                     <!--Review And Description Tab Menu Start-->
                     <ul class="nav dec-and-review-menu">
                         <li>
@@ -239,11 +217,18 @@ require('header.php');
                     </div>
                     <!--Review And Description Tab Content End-->
                 </div>
+                            </div>
+                            <!--Product Details Content End-->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!--Product Description Review Section Start-->
+<!-- Single Product Section End -->
+
+
 
 <!--Product section start-->
 <div class="product-section section pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-60 pb-lg-40 pb-md-30 pb-sm-20 pb-xs-15">
@@ -283,7 +268,7 @@ require('header.php');
 
                             <div class="product-action">
                                 <ul>
-                                    <li><a href="cart.php"><i class="fa fa-cart-plus"></i></a></li>
+                                    <li><a href="carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>"><i class="fa fa-cart-plus"></i></a></li>
                                     <li><a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
                                 </ul>

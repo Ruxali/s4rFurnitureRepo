@@ -2,7 +2,6 @@
 <html>
 <?php
 require('../connect.php');
-require('productHandler.php');
 include('adminfiles/session.php');
 include('adminfiles/head.php')
 ?>
@@ -117,7 +116,7 @@ if (isset($_POST['submit'])) {
               include("../connect.php");
               if(isset($_GET['id'])){
               $id = $_GET['id'];
-echo('$id');
+            
                 $sql = "SELECT * FROM products WHERE id='$id' ";
                 $res = mysqli_query($connect, $sql);
                 $row = $res->fetch_assoc();
@@ -128,34 +127,49 @@ echo('$id');
               <div class="box-body">
                 <div class="form-group">
                   <label for="name">Product name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter product name" name="name" value="<?php echo $row['name'] ?>">
+                  <input type="text" class="form-control" id="name" placeholder="Enter product name" name="name" value="<?php echo $row['name'] ;?>">
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Enter amount" name="price" value="<?php echo  $row['price'] ?>">
+                  <input type="text" class="form-control" id="price" placeholder="Enter amount" name="price" value="<?php echo  $row['price'] ;?>">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture" name="file" value="<?php echo  $row['image1'] ?>">
+                  <br>
+                  <img src="<?php echo $row['image1'];?>" alt="" style="height:100px!important; width:100px!important; object-fit:cover;"> 
+                  <br>
+                  <br>
+                  <input type="file" id="picture" name="file" value="<?php echo  $row['image1'] ;?>">
                 </div>
                 <div class="form-group">
                   <label for="picture">File input</label>
-                  <input type="file" id="picture1" name="file1" value="<?php echo  $row['image2'] ?>">
+                  <br>
+                  <img src="<?php echo $row['image2'];?>" alt="" style="height:100px!important; width:100px!important; object-fit:cover;"> 
+                  <br>
+                  <br>
+                  <input type="file" id="picture1" name="file1" value="<?php echo  $row['image2'] ;?>">
                 </div>
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <textarea id="description" class="form-control" rows="10" placeholder="Enter Description" name="description" value="<?php echo $row['description'] ?>"></textarea>
+                  <textarea class="form-control" name="description" id="description" rows="10" style="height: 180px;" ><?php echo $row['description'];?></textarea>
                 </div>
                 <div class="form-group">
                   <label for="category">Category</label>
                   <select id="category" name="category">
                     <?php
                     include('connect.php');
-                    $cat = "SELECT * from categories";
-                    $results = mysqli_query($connect, $cat);
+                    $id = $_GET['id'];
+                        $sql = "SELECT c.name AS catname, d.* FROM products d JOIN categories c ON d.category_id = c.id  WHERE d.id='$id'";
+                    
+                    $results = mysqli_query($connect, $sql);
                     while ($row = mysqli_fetch_assoc($results)) {
-                      echo "<option value=" . $row['id'] . ">" . $row['name'] . "</option>";
+                      echo"<option selected value= " . $row['id'] . ">" ."Recent-"  . $row['catname'] . "</option>";
+                      $cat="SELECT * from categories";
+                    $results=mysqli_query($connect,$cat);
+                    while($row=mysqli_fetch_assoc($results)){
+                    echo "<option value=".$row['id'].">".$row['name']."</option>";
                     }
+                  }
                     ?>
                   </select>
                 </div>

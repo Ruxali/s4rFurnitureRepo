@@ -131,35 +131,7 @@ include('footer.php');
 <script src="assets/js/vendor/bootstrap.min.js"></script>
 <script src="assets/js/plugins/plugins.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-    function viewdata(id) {
-        console.log('button has been clicked');
-        $.ajax({
-            url: "fetch.php",
-            method: 'POST',
-            data: {
-                'view': id
-            },
-            success: function(data) {
-                //  console.log('data was transfered');
-                var contenzzz = document.getElementById('quick-view-modal-container');
-                contenzzz.innerHTML = data;
-                // contenzzz.setAttribute("aria-hidden", "false");
-                // contenzzz.classList.add('show');
-                // contenzzz.style.display = 'block';
-            }
-        })
-    }
 
-    function closedata() {
-        var contenzzz = document.getElementById('quick-view-modal-container');
-        contenzzz.style.display = 'none';
-        contenzzz.classList.remove('show');
-        contenzzz.setAttribute("aria-hidden", "true");
-
-
-    }
-</script>
 </body>
 
 </html>

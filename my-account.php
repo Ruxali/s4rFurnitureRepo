@@ -67,11 +67,11 @@ include('header.php');
                                             //connecting to databse
                                             $run_Sql = mysqli_query($connect, $sql);
                                         ?>
-                                        <?php } ?>
-                                            <p>Hello, <strong><?php echo'$username'?></strong> (If Not <strong>Tuntuni !</strong><a href="logout.php" class="logout"> Logout</a>)</p>
+                                        
+                                            <p>Hello, <strong><?php echo"$username"?></strong> (If Not <strong><?php echo"$username"?>!</strong><a href="logout.php" class="logout"> Logout</a>)</p>
                                     </div>
-                                
-                                <p class="mb-0">From your account dashboard. you can easily check &amp; view your
+                                    <?php } ?>
+                                <p class="mb-0">From your account dashboard, you can easily check &amp; view your
                                     recent orders, manage your shipping and billing addresses and edit your
                                     password and account details.</p>
                                 </div>

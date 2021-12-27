@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <?php
@@ -66,26 +67,37 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                 ?>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Pages</a>
-
-                                            <ul class="sub-menu">
-                                                <li><a href="about.php">About</a></li>
-                                                <li><a href="cart.php">Shopping Cart</a></li>
-                                                <li><a href="checkout.php">Checkout</a></li>
-                                                <li><a href="wishlist.php">Wishlist</a></li>
-                                                <li><a href="my-account.php">My Account</a></li>
-                                                <li>
-                                                    <?php
-                                                    include('connect.php');
-                                                    if (!empty($_SESSION['username'])) { ?>
-                                                        <a href="logout.php">Logout</a>
-                                                    <?php } else { ?>
-                                                        <a href="login-register.php">Login/Register</a>
-                                                    <?php } ?>
-                                                </li>
-                                            </ul>
+                                        <li>
+                                            <a href="contact.php">Contact </a>
                                         </li>
-                                        <li><a href="contact.php">Contact</a></li>
+                                        <!--Session pachi header ma change lyauna lai-->
+                                        <?php
+                                        if (isset($_SESSION['username'])) {
+                                            $username = $_SESSION['username'];
+
+                                            require 'connect.php';
+                                            $sql = "SELECT * FROM customers WHERE username = '$username'";
+                                            //connecting to databse
+                                            $run_Sql = mysqli_query($connect, $sql);
+                                            if ($run_Sql) {
+                                                $fetch_info = mysqli_fetch_assoc($run_Sql);
+                                                $email = $fetch_info['email'];
+
+                                                echo "<li>
+									<a style='width:180px!important;' href='my-account.php' >
+										  $username's Account</a>
+								
+								</li>
+                               
+                                ";
+                                            }
+                                        } else {
+
+                                        ?>
+                                            <li>
+                                                <a href="login-register.php">Login/Register</a>
+                                            </li>
+                                        <?php } ?>
                                         <li>
                                             <div style="padding: 35px 0px 40px 0px;">
                                                 <form method="post" action="search.php">
@@ -98,46 +110,15 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                 </form>
                                             </div>
                                         </li>
+                                        <li class="mini-cart"><a href="cart.php"><i class="flaticon-shopping-cart"></i></a>
+
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
                             <!--Header Menu Area End-->
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-5 col-12">
-                            <!--Header Search And Mini Cart Area Start-->
-                            <div class="header-search-cart-area">
 
-                                <ul>
-
-                                    <li class="currency-menu"><a href="#"><i class="flaticon-user"></i></a>
-                                        <!--Crunccy dropdown-->
-                                        <ul class="currency-dropdown">
-
-                                            <!--Account Currency Start-->
-                                            <li><a href="my-account.php">My account</a>
-                                                <ul>
-                                                    <li><?php if (isset($_SESSION['username'])) {
-                                                            echo '<a href="logout.php">Logout</a>';
-                                                        } else {
-                                                            echo '<a href="login-register.php">Login/Register</a>';
-                                                        } ?></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="my-account.php">My account</a></li>
-                                                    <li><a href="cart.php">Cart</a></li>
-                                                    <li><a href="wishlist.php">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <!--Account Currency End-->
-                                        </ul>
-                                        <!--Crunccy dropdown-->
-                                    </li>
-                                    <li class="mini-cart"><a href="cart.php"><i class="flaticon-shopping-cart"></i></a>
-
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--Header Search And Mini Cart Area End-->
-                        </div>
                     </div>
                 </div>
             </div>
@@ -155,7 +136,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                     <div class="col-6 col-md-6">
                                         <div class="header-logo">
                                             <a href="index.php">
-                                                <img src="./assets/images/logo.png" class="img-fluid" alt="">
+                                                <img src="assets/images/mainlogo.png" class="img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -229,53 +210,47 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                     ?>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children"><a href="#">Pages</a>
-                                <ul class="submenu2">
-                                    <li><a href="about.php">About</a></li>
-                                    <li><a href="cart.php">Shopping Cart</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist.php">Wishlist</a></li>
-                                    <li><a href="my-account.php">My Account</a></li>
-                                    <li><?php if (isset($_SESSION['username'])) {
-                                            echo '<a href="logout.php">Logout</a>';
-                                        } else {
-                                            echo '<a href="login-register.php">Login/Register</a>';
-                                        } ?></li>
-                                </ul>
-                            </li>
+
                             <li class="menu-item-has-children"><a href="contact.php">Contact</a>
                             </li>
+                            <?php
+                            if (isset($_SESSION['username'])) {
+                                $username = $_SESSION['username'];
 
+                                require 'connect.php';
+                                $sql = "SELECT * FROM customers WHERE username = '$username'";
+                                //connecting to databse
+                                $run_Sql = mysqli_query($connect, $sql);
+                                if ($run_Sql) {
+                                    $fetch_info = mysqli_fetch_assoc($run_Sql);
+                                    $email = $fetch_info['email'];
+
+                                    echo "<li>
+									<a style='width:180px!important;' href='my-account.php' >
+										  $username's Account</a>
+								
+								</li>
+                               
+                                ";
+                                }
+                            } else {
+
+                            ?>
+                                <li>
+                                    <a href="login-register.php">Login/Register</a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </nav>
 
-                    <div class="offcanvas-settings">
-                        <nav class="offcanvas-navigation">
-                            <ul>
-                                <li class="menu-item-has-children"><a href="#">MY ACCOUNT </a>
-                                    <ul class="submenu2">
-                                        <li><?php if (isset($_SESSION['username'])) {
-                                                echo '<a href="logout.php">Logout</a>';
-                                            } else {
-                                                echo '<a href="login-register.php">Login/Register</a>';
-                                            } ?></li>
-                                        <li><a href="checkout.php">Checkout</a></li>
-                                        <li><a href="my-account.php">My account</a></li>
-                                        <li><a href="cart.php">Cart</a></li>
-                                        <li><a href="wishlist.php">Wishlist</a></li>
-                                    </ul>
-                                </li>
 
-                            </ul>
-                        </nav>
-                    </div>
 
                     <div class="offcanvas-widget-area">
                         <div class="off-canvas-contact-widget">
                             <div class="header-contact-info">
                                 <ul class="header-contact-info-list">
-                                    <li><i class="ion-android-phone-portrait"></i> <a href="tel://12452456012">(1245) 2456 012 </a></li>
-                                    <li><i class="ion-android-mail"></i> <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+                                    <li><i class="ion-android-phone-portrait"></i> <a href="tel:+97701-5570154">+977 01-5570154</a></li>
+                                    <li><i class="ion-android-mail"></i> <a href="mailto:s4rfurniture@gmail.com">s4rfurniture@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -285,7 +260,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                             <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
                             <a href="#" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
                             <a href="#" title="Youtube"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+                            
                         </div>
                         <!--Off Canvas Widget Social End-->
                     </div>
