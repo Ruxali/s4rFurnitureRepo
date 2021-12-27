@@ -4,11 +4,13 @@
 <?php
     include ("header.php");
 ?>
-
+<center>
 <body>
     <?php
-    echo 'your total bill amount is Rs.';
+    echo 'Your total bill amount is Rs.';
     echo $_SESSION['total'];
+    
+    echo'<br>';
     echo '<br>';
     ?>
     <form action="https://uat.esewa.com.np/epay/main" method="POST">
@@ -24,5 +26,11 @@
     <input class="btn btn-sm" type="submit" value="Pay using eSewa">
     </form>
 </body>
-
+    </center>
+    
 </html>
+<br>
+<br>
+<?php
+    include ("footer.php");
+?>

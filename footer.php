@@ -62,11 +62,7 @@
                                         <p>Copyright &copy;2021 <a href="#">S4R Furniture</a>. All rights reserved.</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="payment-getway text-lg-right text-center">
-                                        <img src="./assets/images/payment.png" alt="">
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
