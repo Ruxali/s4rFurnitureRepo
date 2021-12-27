@@ -2,42 +2,7 @@
 include('header.php');
 include('connect.php');
 ?>
-<style>
-	.wrap-num-product {
-		width: 140px;
-		height: 45px;
-		border: 1px solid #e6e6e6;
-		border-radius: 3px;
-		overflow: hidden;
-	}
 
-	.btn-num-product-up,
-	.btn-num-product-down {
-		width: 45px;
-		height: 100%;
-		cursor: pointer;
-	}
-
-	.num-product {
-		width: calc(100% - 90px);
-		height: 100%;
-		border-left: 1px solid #e6e6e6;
-		border-right: 1px solid #e6e6e6;
-		background-color: #f7f7f7;
-	}
-
-	input.num-product {
-		-moz-appearance: textfield;
-		appearance: none;
-		-webkit-appearance: none;
-	}
-
-	input.num-product::-webkit-outer-spin-button,
-	input.num-product::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-</style>
 <?php
 
 if (!isset($total)) {
@@ -98,7 +63,7 @@ if (!isset($total)) {
 										<td class="pro-price"><span>Rs. <?php echo $value['item_price'] ?></span></td>
 										<td class="pro-quantity">
 											<form action="cartupdate.php" method="POST">
-												<div class="pro-qty"><input type="number" value="<?php echo $value['quantity'] ?>"></div>
+												<div class="pro-qty"><input type="number" name="quantity" value="<?php echo $value['quantity'] ?>"></div>
 										</td>
 
 										<td class="pro-update">
@@ -155,9 +120,9 @@ if (!isset($total)) {
 						<div class="cart-summary">
 							<div class="cart-summary-wrap">
 								<h4>Cart Summary</h4>
-								<p>Sub Total <span>$75.00</span></p>
-								<p>Shipping Cost <span>$00.00</span></p>
-								<h2>Grand Total <span>$75.00</span></h2>
+								<p>Sub Total <span>Rs. <?php echo $total ?></span></p>
+								<p>Shipping Cost <span>Free Shipping</span></p>
+								<h2>Grand Total <span>Rs. <?php echo $total ?></span></h2>
 							</div>
 							<div class="cart-summary-button">
 								<button class="btn">Checkout</button>
