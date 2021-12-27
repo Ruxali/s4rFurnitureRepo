@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 09:01 AM
+-- Generation Time: Dec 27, 2021 at 05:41 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -39,6 +39,23 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `username`, `password`) VALUES
 (1, 'admin@gmail.com', 'admin12345!');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `item_name` varchar(50) NOT NULL,
+  `item_quantity` int(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `item_price` int(11) NOT NULL,
+  `equal` float NOT NULL,
+  `item_id` int(10) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -86,7 +103,27 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `email`, `message`) VALUES
-(1, '', '', '');
+(2, '', '', ''),
+(3, '', '', ''),
+(4, '', '', ''),
+(5, '', '', ''),
+(6, 'Ruxali', 'ruksalimaharjan36@gmail.com', 'test'),
+(7, '', '', ''),
+(8, 'Ruxali', 'ruxalimaharjan@gmail.com', 'asdg'),
+(9, 'test', 'test@test.com', 'test\r\n'),
+(10, '', '', ''),
+(11, '', '', ''),
+(12, 'Bed', 'tester2@tester.com', 'gfdssdf'),
+(13, 'Ruxali', 'ruxali@gmail.com', 'asdfghjkl'),
+(14, '', '', ''),
+(15, 'Ruxali', 'ruxali@gmail.com', 'cvb'),
+(16, '', '', ''),
+(17, '', '', ''),
+(18, 'test', 'tester2@tester.com', 'asdf'),
+(19, 'Beds', 'ruxali@gmail.com', 'dfvbnm,'),
+(20, 'test', 'tester2@tester.com', 'test'),
+(21, '', '', ''),
+(22, 'test', 'teseaaaaaa@test.com', 'text');
 
 -- --------------------------------------------------------
 
@@ -109,11 +146,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `username`, `email`, `password`, `created_at`, `updated_at`, `status`) VALUES
-(10, 'Ruxali', 'ruxalimaharjan@gmail.com', '$2y$10$KR3uYG7APbglRnaJ1vfDf.O', '2021-12-23 07:11:57', '2021-12-23 07:11:57', 0),
-(11, 'Ruxana', 'admin@gmail.com', '12345asdf', '2021-12-23 07:25:45', '2021-12-23 07:25:45', 1),
-(12, 'admin', 'admin1@gmail.com', 'd8f2481b859533616e48a72e0014b6', '2021-12-23 07:30:05', '2021-12-23 07:30:05', 1),
-(13, 'Ruxali', 'admini@gmail.com', '912ec803b2ce49e4a541068d495ab5', '2021-12-23 07:44:00', '2021-12-23 07:44:00', 1),
-(14, 'admini', 'adminiiii@gmail.com', '040b7cf4a55014e185813e0644502e', '2021-12-23 07:52:42', '2021-12-23 07:52:42', 1);
+(15, 'Ruxali', 'ruxalimaharjan@gmail.com', 'asdf12345', '2021-12-23 09:27:22', '2021-12-23 09:27:22', 1);
 
 -- --------------------------------------------------------
 
@@ -190,6 +223,13 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD KEY `item_id` (`item_id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -236,22 +276,28 @@ ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `orders`
