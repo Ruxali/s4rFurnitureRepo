@@ -104,8 +104,12 @@ if (!isset($total)) {
 										<input type="text" placeholder="City">
 									</div>
 									<div class="col-md-6 col-12 mb-25">
-										<input type="text" placeholder="Postcode / Zip">
-									</div>
+                                                <select class="nice-select">
+                                                    <option>Cash on Delivery</option>
+                                                    <option>E-Sewa</option>
+                                                    
+                                                </select>
+                                            </div>
 									<div class="col-md-6 col-12 mb-25">
 										<button class="btn">Add</button>
 									</div>
@@ -125,7 +129,7 @@ if (!isset($total)) {
 								<h2>Grand Total <span>Rs. <?php echo $total ?></span></h2>
 							</div>
 							<div class="cart-summary-button">
-								<button class="btn">Checkout</button>
+								<button onclick="location.href='cart2.php'" class="btn">Checkout</button>
 							</div>
 						</div>
 					</div>
