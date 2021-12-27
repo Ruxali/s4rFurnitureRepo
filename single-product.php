@@ -107,11 +107,9 @@ require('header.php');
                                 </div>
 
                                 <div class="single-product-quantity">
-                                    <form class="add-quantity" action="#">
                                         <div class="add-to-link">
                                             <button class="btn" onclick="location.href='carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>'"><i class="fa fa-shopping-bag"></i>add to cart</button>
                                         </div>
-                                    </form>
                                 </div>
                                 
                                 <div class="product-meta">
@@ -270,7 +268,7 @@ require('header.php');
                                 <ul>
                                     <li><a href="carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>"><i class="fa fa-cart-plus"></i></a></li>
                                     <li><a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>

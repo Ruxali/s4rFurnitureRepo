@@ -8,7 +8,7 @@ include('connect.php');
 
     $sql = "INSERT INTO contact(name, email, message) VALUES('$name','$email','$message')";
     $connect->query($sql);
-    echo "<script> alert('Registration successful');
+    echo "<script> alert('Message successfully sent!');
 	window.location.href='index.php';
 	</script>";
 

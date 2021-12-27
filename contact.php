@@ -30,7 +30,7 @@ include('header.php');
             <div class="col-12">
                 <div class="contact-form-wrap">
                     <h3 class="contact-title">Write Us</h3>
-                    <form id="contact-form" action="contactHandler.php" method="POST">
+                    <form action="contactHandler.php" method="POST">
                         <div class="row">
                             <div class="col-lg-5">
                                 <div class="name-fild-padding mb-sm-30 mb-xs-30">

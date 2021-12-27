@@ -139,7 +139,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                                                 <a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a>
 
                                                                                 </li>
-                                                                                <li><a href="wishlist.php"><i class="fa fa-heart-o"></i></a></li>
+                                                                                
                                                                             </ul>
                                                                         </div>
                                                                     </div>
