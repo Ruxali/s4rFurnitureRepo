@@ -90,49 +90,52 @@ if (!isset($total)) {
 				</div>
 
 				<div class="row">
-
-					<div class="col-lg-6 col-12 mb-5">
-						<!-- Calculate Shipping -->
-						<div class="calculate-shipping">
-							<h4>Calculate Shipping</h4>
-							<form action="#">
-								<div class="row">
-									<div class="col-md-6 col-12 mb-25">
-										<input type="text" placeholder="Country">
-									</div>
-									<div class="col-md-6 col-12 mb-25">
-										<input type="text" placeholder="City">
-									</div>
-									<div class="col-md-6 col-12 mb-25">
-                                                <select class="nice-select">
-                                                    <option>Cash on Delivery</option>
-                                                    <option>E-Sewa</option>
-                                                    
-                                                </select>
-                                            </div>
-									<div class="col-md-6 col-12 mb-25">
-										<button class="btn">Add</button>
-									</div>
-								</div>
-							</form>
-						</div>
-
-					</div>
-
 					<!-- Cart Summary -->
 					<div class="col-lg-6 col-12 mb-30 d-flex">
+					<form action="orderhandler.php" method="POST">
 						<div class="cart-summary">
 							<div class="cart-summary-wrap">
 								<h4>Cart Summary</h4>
 								<p>Sub Total <span>Rs. <?php echo $total ?></span></p>
-								<p>Shipping Cost <span>Free Shipping</span></p>
+								<p>Shipping Cost= <span>Free Shipping</span></p>
 								<h2>Grand Total <span>Rs. <?php echo $total ?></span></h2>
 							</div>
-							<div class="cart-summary-button">
-								<button onclick="location.href='cart2.php'" class="btn">Checkout</button>
-							</div>
+
 						</div>
 					</div>
+					<div class="col-lg-6 col-12 mb-5">
+						<!-- Calculate Shipping -->
+						<div class="calculate-shipping">
+							<h4>Shipping Address</h4>
+							
+								<div class="row">
+
+									<div class="col-md-6 col-12 mb-25">
+										<input type="text" name="address" placeholder="City">
+									</div>
+									&nbsp;
+									<div class="col-md-6 col-12 mb-25">
+										<input type="text" name="phone" placeholder="Phone Number">
+									</div>
+									&nbsp;
+									<div class="col-md-6 col-12 mb-25">
+										<select class="js-select2" name="payment">
+											<option value="cash">Cash on Delivery</option>
+											<option value="eSewa">E-Sewa</option>
+
+										</select>
+									</div>
+									&nbsp;
+									<div class="cart-summary-button">
+										<button name="placeorder" class="btn">Place Order</button>
+									</div>
+								</div>
+							
+						</div>
+
+					</div>
+
+					</form>
 
 				</div>
 
