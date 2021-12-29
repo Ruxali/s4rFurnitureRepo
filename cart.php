@@ -99,6 +99,7 @@ if (!isset($total)) {
 								<p>Sub Total <span>Rs. <?php echo $total ?></span></p>
 								<p>Shipping Cost= <span>Free Shipping</span></p>
 								<h2>Grand Total <span>Rs. <?php echo $total ?></span></h2>
+								<input type="hidden" name="total" value="<?php echo $total?>">
 							</div>
 
 						</div>

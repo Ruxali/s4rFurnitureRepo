@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['cart'])) {
 	$checker=array_column($_SESSION['cart'], 'item_name');
 	if(in_array($_GET['cart_name'], $checker)){

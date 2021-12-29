@@ -23,7 +23,6 @@
                             <h4 class="title"><span class="text">Quick Link</span></h4>
                             <ul class="ft-menu">
                                 <li><a href="my-account.php">My account</a></li>
-                                <li><a href="wishlist.php">Wishlist</a></li>
                                 <li><a href="cart.php">Cart</a></li>
                             </ul>
                         </div>

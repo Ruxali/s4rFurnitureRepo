@@ -276,11 +276,10 @@ img {
   width: 0px;
 }
 .categories .circle{
-  
-
-padding-left: 70px;
+  padding-left: 70px;
   border-radius: border;
 }
+
 .categories .circle1{
   padding-left: 10px;
     border-radius: border;

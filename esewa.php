@@ -7,7 +7,7 @@
 <center>
 <body>
     <?php
-    echo 'Your total bill amount is Rs.';
+    echo 'Your total bill amount is Rs. ';
     echo $_SESSION['total'];
     
     echo'<br>';
