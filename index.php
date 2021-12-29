@@ -170,7 +170,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                     </div>
                     <div class="feature-content">
                         <h4 class="title">Free home delivery</h4>
-                        <p class="short-desc">We provide free home delivery for the all products over purchase of Rs.25,000.</p>
+                        <p class="short-desc">We provide free home delivery for the all products.</p>
                     </div>
                 </div>
                 <!-- Single Feature End -->

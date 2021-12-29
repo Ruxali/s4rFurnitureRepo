@@ -92,19 +92,49 @@ if (!isset($total)) {
 				<div class="row">
 					<!-- Cart Summary -->
 					<div class="col-lg-6 col-12 mb-30 d-flex">
-					<form action="#" method="POST">
+					<form action="orderhandler.php" method="POST">
 						<div class="cart-summary">
 							<div class="cart-summary-wrap">
 								<h4>Cart Summary</h4>
 								<p>Sub Total <span>Rs. <?php echo $total ?></span></p>
-								<p>Shipping Cost = &nbsp; &nbsp;&nbsp;&nbsp;<span>Free Shipping</span></p>
+								<p>Shipping Cost= <span>Free Shipping</span></p>
 								<h2>Grand Total <span>Rs. <?php echo $total ?></span></h2>
 								<input type="hidden" name="total" value="<?php echo $total?>">
 							</div>
-							<button class="btn btn-sm " name="remove"><a href="cart2.php">Proceed to Checkout</a></button>
+
 						</div>
 					</div>
-					
+					<div class="col-lg-6 col-12 mb-5">
+						<!-- Calculate Shipping -->
+						<div class="calculate-shipping">
+							<h4>Shipping Address</h4>
+							
+								<div class="row">
+
+									<div class="col-md-6 col-12 mb-25">
+										<input type="text" name="address" placeholder="City">
+									</div>
+									&nbsp;
+									<div class="col-md-6 col-12 mb-25">
+										<input type="text" name="phone" placeholder="Phone Number">
+									</div>
+									&nbsp;
+									<div class="col-md-6 col-12 mb-25">
+										<select class="js-select2" name="payment">
+											<option value="cash">Cash on Delivery</option>
+											<option value="eSewa">E-Sewa</option>
+
+										</select>
+									</div>
+									&nbsp;
+									<div class="cart-summary-button">
+										<button name="placeorder" class="btn">Place Order</button>
+									</div>
+								</div>
+							
+						</div>
+
+					</div>
 
 					</form>
 
