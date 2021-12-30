@@ -2,6 +2,14 @@
 include('header.php');
 ?>
 
+<?php
+ require('connect.php');
+ require('functions.php');
+    
+
+  $sql = "SELECT e.id AS orderid, e.total AS total, f.name AS products, d.* FROM order_details d JOIN orders e ON d.order_id = e.id JOIN products f ON d.product_id = f.id ORDER BY d.id  asc"; 
+  $res = mysqli_query($connect,$sql);
+?>
 <!-- Page Banner Section Start -->
 <div class="page-banner-section section bg-image" data-bg="gallery/shopBanner.png">
     <div class="container">
@@ -78,40 +86,42 @@ include('header.php');
                                         <table class="table table-bordered">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th>No</th>
-                                                    <th>Name</th>
+                                                    <th>No.</th>
+                                                    <th>Product Name</th>
                                                     <th>Date</th>
-                                                    <th>Status</th>
+                                                    <th>Quantity</th>
                                                     <th>Total</th>
-                                                    <th>Action</th>
+                                                    <th>Status</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
+                                                <?php
+                                                
+                                            while ($row = mysqli_fetch_assoc($res)) { ?>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Mostarizing Oil</td>
-                                                    <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
-                                                    <td>$45</td>
-                                                    <td><a href="cart.php" class="btn">View</a></td>
+                                                    <td><?php echo $row['orderid'] ?></td>
+                                                    <td><?php echo $row['products'] ?></td>
+                                                    <td><?php echo $row['created_at'] ?></td>
+                                                    <td><?php echo $row['quantity'] ?></td>
+                                                    <td>Rs. <?php echo $row['total'] ?></td>
+                                                    <td><?php
+                                            
+                                                                if($row['status'] == '1')
+                                                                {
+                                                                    echo "<span class='text-success'>Delievered<span>";
+                                                                }
+                                                                else{
+                                                                    echo "<span class='text-danger'> Order Placed <span>";
+                                                                }
+                                            
+                                                           
+
+                                                            ?>
+                                            
+                                                    </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Katopeno Altuni</td>
-                                                    <td>July 22, 2018</td>
-                                                    <td>Approved</td>
-                                                    <td>$100</td>
-                                                    <td><a href="cart.php" class="btn">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Murikhete Paris</td>
-                                                    <td>June 12, 2017</td>
-                                                    <td>On Hold</td>
-                                                    <td>$99</td>
-                                                    <td><a href="cart.php" class="btn">View</a></td>
-                                                </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

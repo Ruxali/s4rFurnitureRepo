@@ -37,7 +37,7 @@
           </a>
         </li>
         <li>
-          <a href="categories.php">
+          <a href="order.php">
             <i class="fa fa-th"></i> <span>ORDERS</span>
           </a>
         </li>

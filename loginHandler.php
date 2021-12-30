@@ -12,13 +12,14 @@ if (isset($_POST['login'])) {
 
   $status = $final['status'];
 
+  
+if($status == '1'){
+  
   $_SESSION['username']=$final['username'];
   $_SESSION['password']=$final['password'];
 
   $_SESSION['customerid']=$final['id'];
 
-  
-if($status == '1'){
     if($username=$final['username'] AND $password=$final['password']){
         header('location: my-account.php');
       } else {

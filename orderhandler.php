@@ -8,10 +8,10 @@ $total=$_POST['total'];
 $phone=$_POST['phone'];
 
 $address=$_POST['address'];
-$customerid=$_SESSION['id'];
+$customerid=$_SESSION['customerid'];
 $payment=$_POST['payment'];
 
-$sql="INSERT INTO orders(customer_id, address, phone, total) VALUES('$customerid','$address', '$phone', '$total')";
+$sql="INSERT INTO orders(customer_id,address, phone, total) VALUES('$customerid','$address', '$phone', '$total')";
 $connect->query($sql);
 
 $sql2="SELECT id from orders order by id DESC limit 1";
@@ -23,7 +23,7 @@ foreach ($_SESSION['cart'] as $key => $value) {
 	$proid=$value['item_id'];
 	$quantity=$value['quantity'];
 
-	$sql3="INSERT INTO order_details(order_id,product_id,quantity) VALUES('$orderid','$proid','$quantity')";
+	$sql3="INSERT INTO order_details(order_id,customer_id,product_id,quantity) VALUES('$orderid','$customerid','$proid','$quantity')";
 	$connect->query($sql3);
 }
 

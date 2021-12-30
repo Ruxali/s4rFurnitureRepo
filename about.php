@@ -39,7 +39,7 @@ include('header.php');
                 <!--About Us Content Start-->
                 <div class="about-us-content pl-30 pl-md-0 pl-sm-0 pl-xs-0">
                     <span>Since 1985</span>
-                    <h2>Provide Best Quality Furnitures for Our Cleint</h2>
+                    <h2>Provide Best Quality Furnitures for Our Client</h2>
                     <p>We have been providing best quality furnitures to our customers since 1985.</p>
                     <p>Ordering from us has just become very easy since this website. We hereby try to provide best quality furnitures till forever like we always have.</p>
                 </div>

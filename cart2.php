@@ -1,6 +1,7 @@
 <?php
 include('header.php');
 include('connect.php');
+include('customersession.php');
 ?>
 
 <?php
@@ -43,9 +44,9 @@ if (!isset($total)) {
 								<th class="pro-title">Product</th>
 								<th class="pro-price">Price</th>
 								<th class="pro-quantity">Quantity</th>
-								<th class="pro-update"></th>
+								
 								<th class="pro-subtotal">Total</th>
-								<th class="pro-remove">Action</th>
+								
 							</tr>
 						</thead>
 						<tbody>
@@ -62,24 +63,13 @@ if (!isset($total)) {
 										<td class="pro-title"><a href="#"><?php echo $value['item_name'] ?></a></td>
 										<td class="pro-price"><span>Rs. <?php echo $value['item_price'] ?></span></td>
 										<td class="pro-quantity">
-											<form action="cartupdate.php" method="POST">
-												<div class="pro-qty"><input type="number" name="quantity" value="<?php echo $value['quantity'] ?>"></div>
+											
+												<div ><input type="text" style="width: 50px; text-align:center;" name="quantity" value="<?php echo $value['quantity'] ?> "></div>
 										</td>
 
-										<td class="pro-update">
-											<button class="btn btn-sm " name="update">Update</button>
-											<input type="hidden" name="item_name" value="<?php echo $value['item_name'] ?>">
-											</form>
-										</td>
+										
 										<td class="pro-subtotal"><span>Rs. <?php echo $total ?></span></td>
-										<td class="pro-remove">
-											<div class="">
-												<form action="cartremove.php" method="POST">
-													<button class="btn btn-sm " name="remove">Remove</button>
-													<input type="hidden" name="item_name" value="<?php echo $value['item_name'] ?>">
-												</form>
-											</div>
-										</td>
+										
 							</tr>
 					<?php
 									}

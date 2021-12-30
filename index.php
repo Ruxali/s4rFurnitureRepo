@@ -119,36 +119,9 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
             </div>
         </div>
     </div>
-
-
 </div>
 </div>
 <!--Product section end-->
-
-
-<!-- Banner section start -->
-<div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- Single Banner Start -->
-                <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 " style="background-image: url('./gallery/frontpage.jpg')">
-                    <div class="sp-banner-content">
-                        <span class="normat-text">UNIQUE DESIGN FURNITURE</span>
-                        <h2 class="title">Zigzag King Chair</h2>
-                        <span class="normat-text">GRAB YOURS FIRST!!!</span>
-                        <a href="shop.php">SHOP NOW</a>
-                    </div>
-                </div>
-                <!-- Single Banner End -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Banner section End -->
-
-
-
 
 <!--Features section start-->
 <div class="features-section section pt-30 pt-lg-15 pt-md-0 pt-sm-0 pt-xs-15">
@@ -206,8 +179,26 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 </div>
 </div>
 <!--Features section end-->
-
-
+<!-- Banner section start -->
+<div class="banner-section section pb-40 pb-sm-30 pb-xs-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Single Banner Start -->
+                <div class="single-banner-item pt-100 pt-md-80 pt-sm-70 pt-xs-50 pb-120 pb-md-100 pb-sm-90 pb-xs-50 mb-30 " style="background-image: url('./gallery/frontpage.jpg')">
+                    <div class="sp-banner-content">
+                        <span class="normat-text">UNIQUE DESIGN FURNITURE</span>
+                        <h2 class="title">Zigzag King Chair</h2>
+                        <span class="normat-text">GRAB YOURS FIRST!!!</span>
+                        <a href="shop.php">SHOP NOW</a>
+                    </div>
+                </div>
+                <!-- Single Banner End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner section End -->
 
 <?php
 include('footer.php');

@@ -90,19 +90,13 @@ require('header.php');
                             <!--Product Details Content Start-->
                             <div class="product-details-content">
                                 <h2><?php echo $row['name'] ?></h2>
-                                <div class="single-product-reviews">
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star active"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <a class="review-link" href="#">(1 customer review)</a>
-                                </div>
+                                
                                 <div class="single-product-price">
                                     <span class="price new-price">Rs. <?php echo $row['price'] ?></span>
 
                                 </div>
                                 <div class="product-description">
+                                    <u>About This Product:</u>
                                     <p><?php echo $row['description'] ?></p>
                                 </div>
 
@@ -135,9 +129,6 @@ require('header.php');
                         <li>
                             <a class="active" data-toggle="tab" href="#description">Description</a>
                         </li>
-                        <li>
-                            <a data-toggle="tab" href="#reviews">Reviews (1)</a>
-                        </li>
                     </ul>
                     <!--Review And Description Tab Menu End-->
                     <!--Review And Description Tab Content Start-->
@@ -147,71 +138,7 @@ require('header.php');
                                 <p><?php echo $row['description'] ?></p>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="reviews">
-                            <div class="review-page-comment">
-                                <h2>1 review for Sit voluptatem</h2>
-                                <ul>
-                                    <li>
-                                        <div class="product-comment">
-                                            <img src="./assets/images/icons/author.png" alt="">
-                                            <div class="product-comment-content">
-                                                <div class="product-reviews">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                                <p class="meta">
-                                                    <strong>admin</strong> - <span>November 22, 2018</span>
-                                                <div class="description">
-                                                    <p>Good Product</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="review-form-wrapper">
-                                    <div class="review-form">
-                                        <span class="comment-reply-title">Add a review </span>
-                                        <form action="#">
-                                            <p class="comment-notes">
-                                                <span id="email-notes">Your email address will not be published.</span>
-                                                Required fields are marked
-                                                <span class="required">*</span>
-                                            </p>
-                                            <div class="comment-form-rating">
-                                                <label>Your rating</label>
-                                                <div class="rating">
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </div>
-                                            </div>
-                                            <div class="input-element">
-                                                <div class="comment-form-comment">
-                                                    <label>Comment</label>
-                                                    <textarea name="message" cols="40" rows="8"></textarea>
-                                                </div>
-                                                <div class="review-comment-form-author">
-                                                    <label>Name </label>
-                                                    <input required="required" type="text">
-                                                </div>
-                                                <div class="review-comment-form-email">
-                                                    <label>Email </label>
-                                                    <input required="required" type="text">
-                                                </div>
-                                                <div class="comment-submit">
-                                                    <button type="submit" class="form-button">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                     <!--Review And Description Tab Content End-->
                 </div>

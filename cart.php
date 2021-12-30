@@ -63,7 +63,7 @@ if (!isset($total)) {
 										<td class="pro-price"><span>Rs. <?php echo $value['item_price'] ?></span></td>
 										<td class="pro-quantity">
 											<form action="cartupdate.php" method="POST">
-												<div class="pro-qty"><input type="number" name="quantity" value="<?php echo $value['quantity'] ?>"></div>
+												<div><input type="number" style="width: 50px; text-align:center;"name="quantity" value="<?php echo $value['quantity'] ?>"></div>
 										</td>
 
 										<td class="pro-update">
