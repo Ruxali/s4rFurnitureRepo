@@ -1,5 +1,5 @@
 <?php
-include('../files/connect.php');
+include('../connect.php');
 if(isset($_POST['update']))
 {
 	$newid=$_POST['form_id'];
@@ -21,12 +21,10 @@ move_uploaded_file($file_tmp, $file_store);
 $sql="UPDATE products set name='$newname', price='$newprice', description='$newdesc', category_id='$newcat', picture='$file_path' where id='$newid' ";
 
 if(mysqli_query($connect,$sql)) {
+	echo"Updated Successfully";
 	header('location: productsshow.php');
 } else {
 	header('location: index.php');
 }
 
 }
-
-
-?>

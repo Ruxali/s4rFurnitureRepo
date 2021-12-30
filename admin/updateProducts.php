@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
           </div>
           <div class="col-sm-6">
 
-            <form role="form" action="" method="post" enctype="multipart/form-data">
+            <form role="form" action="proupdatehandler.php" method="post" enctype="multipart/form-data">
               <?php
               include("../connect.php");
               if(isset($_GET['id'])){
@@ -177,7 +177,8 @@ if (isset($_POST['submit'])) {
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Update</button>
+                <input type="hidden" value="<?php echo $row['id']?>" name="form_id">
+                <button type="submit" name="update" class="btn btn-primary">Update</button>
               </div>
             </form>
           </div>
