@@ -42,30 +42,21 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                             <!-- Grid & List View Start -->
                             <div class="shop-topbar-wrapper d-flex justify-content-between align-items-center">
                                 <div class="grid-list-option d-flex">
-                                    <ul class="nav">
-                                        <li>
-                                            <a class="active show" data-toggle="tab" href="#grid"><i class="fa fa-th"></i></a>
-                                        </li>
-
+                                <ul class="nav">
+                                        
                                         <li>
                                             <!--Categories Area Start-->
-                                            <div class="categories pt-20 mt-20">
+                                            <div class="categories">
                                                 <?php
                                                 foreach ($cat_arr as $row) {
                                                 ?>
-                                                    <div class="circle1">
-
-                                                        <a href="catview.php?catid=<?php echo $row['id']; ?>">
-                                                            <img class="image" style="border-radius: 50%; margin-right: 40px;border: 2px solid#000;  padding:2px ;width:75px!important;height:75px!important; object-fit: contain;" src="upload/<?php echo $row['image'] ?>" alt="Image">
+                                                    <div class="circle1" style="width:100px!important;height:100px!important; margin: 15px;">
+                                             
+                                                    <a href="catview.php?catid=<?php echo $row['id'];?>">
+                                                            <img class="image" style="border-radius: 50%; border: 2px solid#000; padding:2px ;  object-fit: contain;" src="upload/<?php echo $row['image'] ?>" alt="Image">
                                                             <br>
 
-                                                        </a>
-                                                    </div>
-
-
-                                                    <?php
-
-                                                    ?>
+                                                            </a></div>
                                                 <?php
                                                 }
                                                 ?>
@@ -95,7 +86,6 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                 <div class="product-grid-view">
                                                     <div class="row">
                                                         <?php
-
                                                         include("connect.php");
                                                         $id = $_GET['catid'];
                                                         $per_page=8;

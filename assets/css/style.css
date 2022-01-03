@@ -275,25 +275,8 @@ img {
 .categories::-webkit-scrollbar{
   width: 0px;
 }
-.categories .circle{
-  padding-left: 70px;
-  border-radius: border;
-}
 
-.categories .circle1{
-  padding-left: 10px;
-    border-radius: border;
-  }
-  @media only screen and (max-width: 575px) {
-    .categories, .circle, .circle1, .image {
-      max-width: 100%;
-    }
-  }
-  @media screen and (max-width: 479px) {
-    .categories, .circle, .circle1,.image {
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-    }
-  }
+
 /*-- 
     - Input Placeholder
 -----------------------------------------*/

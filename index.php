@@ -23,29 +23,30 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 <!--categories section start-->
 
 <div class="banner-section section pt-30">
+    <div class="container">
+        <div class="col">
+            <div class="section-title text-center mb-15">
+                <h2>Categories Section</h2>
+            </div>
+            <br>
+            <div class="categories">
+                <?php
+                foreach ($cat_arr as $row) {
+                ?>
+                    <div class="circle" style="width:175px!important; height:175px!important;">
+                        <a href="catview.php?catid=<?php echo $row['id']; ?>">
+                            <img class="image" style="border-radius: 50%;border: 2px solid#000;padding:2px ; object-fit: cover;" src="upload/<?php echo $row['image'] ?>" alt="Image">
+                            <br>
+                            <h4 class="text-center" style="color: black;text-transform: uppercase;"><?php echo $row['name'] ?></h4>
+                        </a>
+                    </div>
 
-    <div class="col">
-        <div class="section-title text-center mb-15">
-            <h2>Categories Section</h2>
-        </div>
-        <br>
-        <div class="categories pt-20 mt-20">
-            <?php
-            foreach ($cat_arr as $row) {
-            ?>
-                <div class="circle">
-                    <a href="catview.php?catid=<?php echo $row['id']; ?>">
-                        <img class="image" style="border-radius: 50%; margin-right: 30px;border: 2px solid#000;padding:2px ;width: 150px!important;height: 150px!important; object-fit: contain;" src="upload/<?php echo $row['image'] ?>" alt="Image">
-                        <br>
-                        <h4 class="text-center" style="color: black;text-transform: uppercase;"><?php echo $row['name'] ?></h4>
-                    </a>
-                </div>
-
-            <?php
-            }
-            ?>
+                <?php
+                }
+                ?>
 
 
+            </div>
         </div>
     </div>
 </div>
@@ -58,7 +59,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
 
 <!--Product section start-->
-<div class="product-section section pt-70 pt-lg-50 pt-md-40 pt-sm-30 pt-xs-20 pb-55 pb-lg-35 pb-md-25 pb-sm-15 pb-xs-5">
+<div class="product-section section pt-70 pt-md-40 pt-sm-30 pt-xs-20 pb-55 pb-md-25 pb-sm-15 pb-xs-5">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -102,7 +103,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                         <ul>
                                             <li><a href="carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>"><i class="fa fa-cart-plus"></i></a></li>
                                             <li><a href="single-product.php?id=<?php echo $row['id']; ?>"><i class="fa fa-eye"></i></a></li>
-                                            
+
                                         </ul>
                                     </div>
                                 </div>

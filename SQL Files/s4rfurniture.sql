@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2021 at 10:00 AM
+-- Generation Time: Jan 03, 2022 at 12:51 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -136,7 +136,8 @@ INSERT INTO `orders` (`id`, `customer_id`, `address`, `phone`, `total`, `created
 (3, 15, 'lalitpur', '1234567890', 35000, '2021-12-30 03:48:56', '2021-12-30 03:48:56'),
 (4, 16, 'Damauli', '9813382721', 6000, '2021-12-30 04:53:11', '2021-12-30 04:53:11'),
 (5, 15, 'Sunakothi', '123456', 3000, '2021-12-30 07:48:22', '2021-12-30 07:48:22'),
-(6, 15, 'Kathmandu', '0987654321', 12000, '2021-12-30 07:50:02', '2021-12-30 07:50:02');
+(6, 15, 'Kathmandu', '0987654321', 12000, '2021-12-30 07:50:02', '2021-12-30 07:50:02'),
+(7, 15, 'Sunakothi', '9813382721', 100000, '2021-12-30 10:27:39', '2021-12-30 10:27:39');
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,8 @@ CREATE TABLE `order_details` (
 
 INSERT INTO `order_details` (`id`, `order_id`, `customer_id`, `product_id`, `quantity`, `created_at`, `updated_at`, `status`) VALUES
 (1, 4, 15, 2, 1, '2021-12-30 07:44:25', '2021-12-30 07:44:25', 1),
-(4, 6, 15, 9, 1, '2021-12-30 07:50:02', '2021-12-30 07:50:02', 0);
+(4, 6, 15, 9, 1, '2021-12-30 07:50:02', '2021-12-30 07:50:02', 0),
+(5, 7, 15, 8, 2, '2021-12-30 10:27:39', '2021-12-30 10:27:39', 0);
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `price`, `image1`, `image2`, `description`, `category_id`, `created_at`, `updated_at`, `status`) VALUES
 (1, 'King Size Bed ', 50000, '../uploads/61bd960ab9e0b_bed1a.jpg', '../uploads/61bd960abbcc8_bed1b.jpg', 'Size	King\r\nMaterial	Linen\r\nColor	Grey\r\nFurniture Finish	Metallic\r\nStyle	Contemporary', 1, '2021-12-18 08:04:26', '2021-12-18 08:04:26', 1),
-(2, 'Queen size bed', 3000, '../uploads/61bda139c6635_bed2a.jpg', '../uploads/61bda139d012b_bed2b.jpg', 'Size=	Queen\r\nMaterial=	Wood\r\nColor=	Burgundy\r\nProduct Dimensions=	84.3\"L x 65\"W x 40\"H', 1, '2021-12-18 08:52:09', '2021-12-18 08:52:09', 1),
+(2, 'Queen size bed', 30000, '../uploads/61bda139c6635_bed2a.jpg', '../uploads/61bda139d012b_bed2b.jpg', 'Size=	Queen\r\nMaterial=	Wood\r\nColor=	Burgundy\r\nProduct Dimensions=	84.3\"L x 65\"W x 40\"H', 1, '2021-12-18 08:52:09', '2021-12-18 08:52:09', 1),
 (3, 'Metal Platform Bed', 25000, '../uploads/61bdaece7acc5_bed3a.jpg', '../uploads/61bdaece7b457_bed3b.jpg', 'Size=	Queen,\r\nMaterial=	Wood, Alloy Steel,\r\nColor=	Black,\r\nStyle=	Standard', 1, '2021-12-18 09:50:06', '2021-12-18 09:50:06', 1),
 (4, 'Stairway Bunk Trundle Bed', 28000, '../uploads/61bdcf2f335ec_bed4a.jpg', '../uploads/61bdcf2f34341_bed4b.jpg', 'Size:	Twin over Full\r\nMaterial:	Wood\r\nColor:	Grey\r\nFurniture Finish:	Pine\r\nStyle:	Traditional', 1, '2021-12-18 12:08:15', '2021-12-18 12:08:15', 1),
 (5, 'Leather Executive Side Chair', 7000, '../uploads/61bff2cee882b_chair1a.jpg', '../uploads/61bff2cee990e_chair1b.jpg', 'Product Dimensions:	25.75\"D x 25\"W x 32.75\"H,\r\nRecommended Uses For Product:	Office,\r\nFurniture base movement:	Rock,\r\nRoom Type:	Office,\r\nColor:	Black', 2, '2021-12-20 03:04:46', '2021-12-20 03:04:46', 1),
@@ -281,13 +283,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`

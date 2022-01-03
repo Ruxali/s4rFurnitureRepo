@@ -177,7 +177,7 @@ if (isset($_POST['submit'])) {
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <input type="hidden" value="<?php echo $row['id']?>" name="form_id">
+                <input type="hidden" value="<?php echo $id?>" name="form_id">
                 <button type="submit" name="update" class="btn btn-primary">Update</button>
               </div>
             </form>
