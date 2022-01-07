@@ -9,7 +9,11 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
     $cat_arr[] = $row;
 }
 ?>
-
+<style>
+    .nav::-webkit-scrollbar{
+        width:0;
+    }
+</style>
 
 <!-- Page Banner Section Start -->
 
@@ -21,9 +25,9 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                 <div class="page-banner text-left">
                     <h2>Shop</h2>
                     <ul class="page-breadcrumb">
-                                <li><a href="index.php">Home</a></li>
-                                <li>Shop</li>
-                            </ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li>Shop</li>
+                    </ul>
                 </div>
 
             </div>
@@ -41,12 +45,12 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                         <div class="col-12">
                             <!-- Grid & List View Start -->
                             <div class="shop-topbar-wrapper d-flex justify-content-between align-items-center">
-                                <div class="grid-list-option d-flex">
-                                <ul class="nav">
+                            <div class="grid-list-option d-flex">
+                                <ul class="nav" style=" overflow-x: auto;">
                                         
                                         <li>
                                             <!--Categories Area Start-->
-                                            <div class="categories">
+                                            <div class="categories" style="display:flex;">
                                                 <?php
                                                 foreach ($cat_arr as $row) {
                                                 ?>
@@ -63,6 +67,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
 
                                             </div>
+                                            
                                             <!--Categories Area End-->
                                         </li>
                                     </ul>
@@ -88,19 +93,19 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                         <?php
                                                         include("connect.php");
                                                         $id = $_GET['catid'];
-                                                        $per_page=8;
+                                                        $per_page = 12;
                                                         $start = 0;
-                                                        $current_page=1;
-                                                        if(isset($_GET['start'])){
-                                                            $start= $_GET['start'];
+                                                        $current_page = 1;
+                                                        if (isset($_GET['start'])) {
+                                                            $start = $_GET['start'];
                                                             $current_page = $start;
-                                                            $start --;
-                                                            $start = $start*$per_page;
+                                                            $start--;
+                                                            $start = $start * $per_page;
                                                         }
                                                         $record = mysqli_num_rows(mysqli_query($connect, "SELECT * FROM products WHERE category_id-'$id'"));
-                                                        $pagi = ceil($record/$per_page);
+                                                        $pagi = ceil($record / $per_page);
 
-                                                      
+
                                                         $sql = "SELECT * FROM products WHERE category_id='$id' LIMIT $start,$per_page";
                                                         $results = $connect->query($sql);
                                                         while ($row = $results->fetch_assoc()) {
@@ -121,12 +126,12 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
                                                                         <div class="product-action">
                                                                             <ul>
-                                                                                <li><a href="<a href="carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>><i class="fa fa-cart-plus"></i></a></li>
+                                                                                <li><a href="<a href=" carthandler.php?cart_id=<?php echo $row['id'] ?> &cart_name=<?php echo $row['name'] ?>&cart_price=<?php echo $row['price'] ?>><i class="fa fa-cart-plus"></i></a></li>
                                                                                 <li>
                                                                                     <a href="#quick-view-modal-container" data-toggle="modal" title="Quick View" onclick="viewdata(<?php echo $row['id'] ?>)"><i class="fa fa-eye"></i></a>
 
                                                                                 </li>
-                                                                                
+
                                                                             </ul>
                                                                         </div>
                                                                     </div>
@@ -153,17 +158,17 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                     <div class="row mb-30 mb-sm-40 mb-xs-30">
                         <div class="col">
                             <ul class="page-pagination">
-                                  <?php 
+                                <?php
 
-                                  for($i=1; $i<=$pagi; $i++){
-                                    $class=''; 
-                                      if($current_page == $i){
-                                          $class='active';
-                                      }
-                                      ?>
-                                 <li class="<?php echo $class?>"><a href="?start=<?php echo $i?>"><?php echo $i?></a></li>
-                                 <?php } ?>
-                              </ul>
+                                for ($i = 1; $i <= $pagi; $i++) {
+                                    $class = '';
+                                    if ($current_page == $i) {
+                                        $class = 'active';
+                                    }
+                                ?>
+                                    <li class="<?php echo $class ?>"><a href="?start=<?php echo $i ?>"><?php echo $i ?></a></li>
+                                <?php } ?>
+                            </ul>
                         </div>
                     </div>
                 </div>

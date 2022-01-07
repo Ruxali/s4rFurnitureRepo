@@ -9,7 +9,20 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
     $cat_arr[] = $row;
 }
 ?>
-
+<style>
+        .categories{
+        display:inline-flex; 
+        
+    }
+    .container::-webkit-scrollbar{
+        width:0;
+    }
+    .circle{
+    width:190px!important; 
+    height:190px!important; 
+    padding-left: 40px;
+}
+</style>
 <!--slider section start-->
 <div class="hero-item bg-image" data-bg="gallery/modern-bedroom-lighting.jpg">
     <div class="text-center ">
@@ -23,17 +36,19 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 <!--categories section start-->
 
 <div class="banner-section section pt-30">
-    <div class="container">
+    
         <div class="col">
             <div class="section-title text-center mb-15">
                 <h2>Categories Section</h2>
             </div>
             <br>
-            <div class="categories">
+            <div class="container" style="overflow-x: auto;
+        overflow-y: hidden;">
+            <div class="categories" >
                 <?php
                 foreach ($cat_arr as $row) {
                 ?>
-                    <div class="circle" style="width:175px!important; height:175px!important;">
+                    <div class="circle" >
                         <a href="catview.php?catid=<?php echo $row['id']; ?>">
                             <img class="image" style="border-radius: 50%;border: 2px solid#000;padding:2px ; object-fit: cover;" src="upload/<?php echo $row['image'] ?>" alt="Image">
                             <br>
@@ -48,7 +63,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
             </div>
         </div>
-    </div>
+     </div>
 </div>
 
 
@@ -59,7 +74,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
 
 <!--Product section start-->
-<div class="product-section section pt-70 pt-md-40 pt-sm-30 pt-xs-20 pb-55 pb-md-25 pb-sm-15 pb-xs-5">
+<div class="product-section section pt-70 pt-lg-30 pt-md-40 pt-sm-30 pt-xs-20 pb-55 pt-lg-35 pb-md-25 pb-sm-15 pb-xs-5">
     <div class="container">
         <div class="row">
             <div class="col">

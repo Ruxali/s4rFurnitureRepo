@@ -267,15 +267,6 @@ img {
   margin: 0 !important;
 }
 /*Circle Categories*/
-.categories{
-  display: flex;
-  
-  overflow-x: auto;
-}
-.categories::-webkit-scrollbar{
-  width: 0px;
-}
-
 
 /*-- 
     - Input Placeholder

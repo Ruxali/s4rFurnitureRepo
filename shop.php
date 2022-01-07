@@ -9,7 +9,11 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
     $cat_arr[] = $row;
 }
 ?>
-
+<style>
+    .nav::-webkit-scrollbar{
+        width:0;
+    }
+</style>
 
 <!-- Page Banner Section Start -->
 
@@ -42,11 +46,11 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                             <!-- Grid & List View Start -->
                             <div class="shop-topbar-wrapper d-flex justify-content-between align-items-center">
                                 <div class="grid-list-option d-flex">
-                                    <ul class="nav">
+                                <ul class="nav" style=" overflow-x: auto; overflow-y:hidden;">
                                         
-                                        <li>
+                                        <li><div class="row">
                                             <!--Categories Area Start-->
-                                            <div class="categories">
+                                            <div class="categories" style="display:flex;">
                                                 <?php
                                                 foreach ($cat_arr as $row) {
                                                 ?>
@@ -62,6 +66,7 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
                                                 ?>
 
 
+                                            </div>
                                             </div>
                                             <!--Categories Area End-->
                                         </li>

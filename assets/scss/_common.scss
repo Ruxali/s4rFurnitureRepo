@@ -156,7 +156,7 @@ img {
 }
 
 @media (min-width:1200px) {
-    .container {
+    .containers {
         max-width: 1200px
     }
     .row-five-column {
@@ -167,12 +167,12 @@ img {
     }
 }
 @media #{$small-mobile}{
-    .container {
+    .containers {
         max-width: 450px;
     }
 }
 @media #{$extra-small-mobile}{
-    .container {
+    .containers {
         max-width: 300px;
     }
 }
@@ -185,7 +185,36 @@ img {
         margin: 0 !important;
     }
 }
-
+@media (min-width:1200px) {
+    .containers {
+        max-width: 1200px
+    }
+    .row-five-column {
+        & > [class*="col-xl-"] {
+            max-width: 20%;
+            flex: 0 0 20%;
+        }
+    }
+}
+@media #{$small-mobile}{
+    .containers {
+        max-width: 450px;
+    }
+}
+@media #{$extra-small-mobile}{
+    .containers {
+        max-width: 300px;
+    }
+}
+.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+    & > .col, & > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+        margin: 0 !important;
+    }
+}
 
 /*-- 
     - Input Placeholder
